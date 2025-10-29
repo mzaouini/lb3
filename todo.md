@@ -267,3 +267,12 @@
 - [x] 8. Update Card tab transactions: +2000 Dhs in, -60 Dhs out, balance 1500 Dhs
 - [x] 8a. Add realistic Moroccan transactions: Café Casablanca -45, Marjane -320, Zara -850, Pizza Hut -180, Afriquia -400
 - [x] 8b. Ensure all card transactions sum correctly to show 1500 Dhs balance
+
+## Additional UX Refinements (User Requested)
+- [x] Fix Transaction History - show only salary advance transactions (already correct, no card purchases)
+- [x] Improve Profile screen readability with better contrast/white background
+- [x] Update all CTAs to use color palette (navy/mint/teal)
+- [x] Remove "Biometric enable" and "Privacy Policy" from Profile security section
+- [x] Merge Employee Details with Official Details in Profile (comprehensive page with all info)
+- [x] Move "Change PIN" and "Limits & Usage" from Profile to Cards tab
+- [x] Update favicon to orange 3-dash logo on white background

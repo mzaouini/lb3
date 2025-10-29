@@ -85,22 +85,22 @@ export default function Cards() {
         {/* Actions */}
         <div className="grid grid-cols-3 gap-4">
           <button
-            onClick={() => alert("Feature coming soon")}
+            onClick={() => alert("Change PIN feature coming soon")}
             className="flex flex-col items-center space-y-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
           >
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
               <Lock className="w-6 h-6 text-blue-600" />
             </div>
-            <span className="text-xs text-gray-700 font-medium">Lock Card</span>
+            <span className="text-xs text-gray-700 font-medium">Change PIN</span>
           </button>
           <button
-            onClick={() => setLocation("/app/card-settings")}
+            onClick={() => setLocation("/app/limits")}
             className="flex flex-col items-center space-y-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
           >
             <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
               <Settings className="w-6 h-6 text-green-600" />
             </div>
-            <span className="text-xs text-gray-700 font-medium">Limits</span>
+            <span className="text-xs text-gray-700 font-medium">Limits & Usage</span>
           </button>
           <button
             onClick={() => alert("Feature coming soon")}
