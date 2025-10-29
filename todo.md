@@ -292,3 +292,9 @@
 - [x] Fix service fee - showing 0.6 Dhs instead of 60 Dhs (converted to centimes)
 - [x] Fix total calculation to match actual transaction values (now shows correct sum)
 - [x] Ensure consistency with Home screen transaction display
+
+## Profile Enhancement
+- [x] Add address field to Profile page (full address: Anfa Place Living, Building A, Apt 502)
+- [x] Add city field to Profile page (Casablanca)
+- [x] Add postal code field to Profile page (20250)
+- [x] Ensure fields are properly styled and consistent with existing design

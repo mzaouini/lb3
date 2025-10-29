@@ -10,7 +10,9 @@ export default function OfficialDetails() {
     mobile: '+212 612345678',
     cin: 'AB100900',
     dob: '01/01/2000',
-    address: 'Anfa Place, Casablanca',
+    address: 'Anfa Place Living, Building A, Apt 502',
+    city: 'Casablanca',
+    postalCode: '20250',
   };
 
   const employmentData = {
@@ -73,14 +75,24 @@ export default function OfficialDetails() {
               </div>
             </div>
             
+            <div>
+              <p className="text-xs text-gray-500 mb-1">Date of Birth</p>
+              <p className="font-semibold text-navy">{personalData.dob}</p>
+            </div>
+            
+            <div>
+              <p className="text-xs text-gray-500 mb-1">Address</p>
+              <p className="font-semibold text-navy">{personalData.address}</p>
+            </div>
+            
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <p className="text-xs text-gray-500 mb-1">Date of Birth</p>
-                <p className="font-semibold text-navy">{personalData.dob}</p>
+                <p className="text-xs text-gray-500 mb-1">City</p>
+                <p className="font-semibold text-navy">{personalData.city}</p>
               </div>
               <div>
-                <p className="text-xs text-gray-500 mb-1">Address</p>
-                <p className="font-semibold text-navy">{personalData.address}</p>
+                <p className="text-xs text-gray-500 mb-1">Postal Code</p>
+                <p className="font-semibold text-navy">{personalData.postalCode}</p>
               </div>
             </div>
           </div>
