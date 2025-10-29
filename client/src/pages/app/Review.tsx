@@ -73,7 +73,7 @@ export default function Review() {
           onClick={handleConfirm}
           className="w-full liberty-button text-lg py-6"
         >
-          ...
+          Yalla
         </Button>
       </div>
     </div>

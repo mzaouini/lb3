@@ -374,3 +374,7 @@
 - [x] Fix Review screen to navigate to OTP verification instead of directly to success
 - [x] Fix SelectAccount screen to navigate to Review instead of directly to OTP
 - [x] Ensure transaction flow goes: Select Account → Review → OTP → Processing Animation → Success
+
+## Review Screen Button Fix
+- [x] Change Review screen button text from "..." to "Yalla"
+- [x] Ensure complete flow: Select Account → Review (click Yalla) → OTP → Processing Animation → Success → Home
