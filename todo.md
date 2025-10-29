@@ -336,3 +336,8 @@
 - [x] Change card background from navy/purple to mint/teal gradient (#00d4aa to #00a896)
 - [x] Match the green gradient shown in reference image
 - [x] Ensure text remains readable on new background (white decorative pattern)
+
+## Card Hover Animation
+- [x] Add subtle hover effect to card (lift -2px + enhanced shadow)
+- [x] Smooth transition (300ms) for interactive feel
+- [x] Maintain premium card aesthetic with cursor pointer

@@ -21,7 +21,7 @@ export default function Cards() {
 
       <div className="px-6 -mt-16 space-y-6">
         {/* Prepaid Card with Decorative Pattern */}
-        <Card className="relative bg-gradient-to-br from-[#00d4aa] to-[#00a896] text-white p-8 shadow-2xl overflow-hidden">
+        <Card className="relative bg-gradient-to-br from-[#00d4aa] to-[#00a896] text-white p-8 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-3xl hover:-translate-y-2 cursor-pointer">
           {/* Decorative pattern on right side */}
           <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-20">
             <svg viewBox="0 0 200 300" className="h-full w-full">
