@@ -93,7 +93,7 @@ export default function Cards() {
             <span className="text-xs text-gray-700 font-medium">Lock Card</span>
           </button>
           <button
-            onClick={() => alert("Feature coming soon")}
+            onClick={() => setLocation("/app/card-settings")}
             className="flex flex-col items-center space-y-2 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow"
           >
             <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">

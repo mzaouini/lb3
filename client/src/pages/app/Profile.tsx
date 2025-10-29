@@ -51,7 +51,7 @@ export default function Profile() {
       </div>
 
       <div className="px-8 py-6 space-y-8">
-        <h1 className="text-3xl font-bold">{user?.name || "demo testingg"}</h1>
+        <h1 className="text-3xl font-bold">{user?.name || "Meryem Guezzour"}</h1>
 
         {/* Profile Section */}
         <div className="space-y-4">

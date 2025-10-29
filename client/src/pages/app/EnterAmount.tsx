@@ -7,7 +7,7 @@ import { formatCurrency, parseCurrencyToFils } from "@shared/currency";
 export default function EnterAmount() {
   const [, setLocation] = useLocation();
   const [amount, setAmount] = useState("");
-  const currentBalance = 1700000; // 17,000 Dhs in fils
+  const currentBalance = 233333; // 2,333.33 Dhs in fils (50% of 14 days worked from 10,000 Dhs salary)
 
   const handleNumberClick = (num: string) => {
     if (num === "." && amount.includes(".")) return;

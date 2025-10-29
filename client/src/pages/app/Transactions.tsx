@@ -13,10 +13,17 @@ export default function Transactions() {
   const transactions = [
     {
       id: 1,
-      title: "DOrg FName53 DOrg LName53",
+      title: "Meryem - ACME",
       date: "29 Oct 2025 | 12:48 PM",
-      amount: 10400,
-      status: "in_progress",
+      amount: 206000, // 2,060 Dhs (2,000 + 60 fee)
+      status: "completed",
+    },
+    {
+      id: 2,
+      title: "Meryem - ACME",
+      date: "15 Oct 2025 | 09:30 AM",
+      amount: 106000, // 1,060 Dhs (1,000 + 60 fee)
+      status: "completed",
     },
   ];
 
@@ -62,7 +69,7 @@ export default function Transactions() {
         {/* Total */}
         <div className="text-center py-6">
           <p className="text-sm opacity-75 mb-2">Total Transaction</p>
-          <p className="text-4xl font-bold text-mint">Dhs 0</p>
+          <p className="text-4xl font-bold text-mint">{formatCurrency(transactions.reduce((sum, tx) => sum + tx.amount, 0))}</p>
         </div>
 
         {/* Tabs */}
@@ -81,8 +88,12 @@ export default function Transactions() {
               <Card key={tx.id} className="bg-white/10 border-white/20 p-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-orange-500/20 rounded-full flex items-center justify-center">
-                      <span className="text-orange-500">⚠️</span>
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                      tx.status === 'completed' ? 'bg-green-500/20' : 'bg-orange-500/20'
+                    }`}>
+                      <span className={tx.status === 'completed' ? 'text-green-500' : 'text-orange-500'}>
+                        {tx.status === 'completed' ? '✓' : '⚠️'}
+                      </span>
                     </div>
                     <div>
                       <p className="font-semibold">{tx.title}</p>
@@ -90,8 +101,12 @@ export default function Transactions() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="font-bold text-orange-500">Dhs {tx.amount / 100}</p>
-                    <ChevronLeft className="w-4 h-4 rotate-180 ml-auto" />
+                    <p className={`font-bold ${
+                      tx.status === 'completed' ? 'text-green-500' : 'text-orange-500'
+                    }`}>{formatCurrency(tx.amount)}</p>
+                    <p className="text-xs opacity-75">
+                      {tx.status === 'completed' ? 'Instant' : 'In Progress'}
+                    </p>
                   </div>
                 </div>
               </Card>

@@ -172,3 +172,17 @@
 - [x] Configure build settings for full-stack deployment
 - [x] Add API route rewrites for backend server
 - [x] Configure security headers
+
+## UI/UX Fixes (User Reported)
+- [x] Fix balance display - now shows 2,333.33 Dhs (50% of 14 days worked from 10,000 Dhs salary)
+- [x] Make transaction history dynamic - showing 2 completed transactions
+- [x] Update transaction history to show Meryem's transactions (Meryem - ACME)
+- [x] Create Card Settings screen with toggles (Online Payment, ATM, Payment Abroad, NFC)
+- [x] Add Card Benefits navigation option
+- [x] Update Profile screen with Meryem Guezzour name
+- [x] Change "National ID / Iqamah" to "CIN" in OfficialDetails screen
+- [x] Update OfficialDetails with complete Meryem data (DOB: 01/01/2000, CIN: AB100900, Address: Anfa Place Casablanca, Company: ACME, Salary: 10,000 Dhs)
+- [x] Add CardSettings route and screen
+- [x] Update Cards screen Settings button to navigate to CardSettings
+- [x] Show transaction status as "Instant" with green checkmark for completed transactions
+- [x] Calculate total transaction amount dynamically (3,120 Dhs total)

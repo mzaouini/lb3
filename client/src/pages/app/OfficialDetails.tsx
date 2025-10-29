@@ -27,7 +27,7 @@ export default function OfficialDetails() {
             <label className="text-sm opacity-75 mb-2 block">Full Name</label>
             <Input
               type="text"
-              value="demo testingg"
+              value="Meryem Guezzour"
               disabled
               className="bg-white/10 border-white/20 text-white opacity-60"
             />
@@ -37,27 +37,37 @@ export default function OfficialDetails() {
             <label className="text-sm opacity-75 mb-2 block">Mobile Number</label>
             <Input
               type="text"
-              value="+966501481111"
+              value="+212 612345678"
               disabled
               className="bg-white/10 border-white/20 text-white opacity-60"
             />
           </div>
 
           <div>
-            <label className="text-sm opacity-75 mb-2 block">National ID / Iqamah</label>
+            <label className="text-sm opacity-75 mb-2 block">CIN</label>
             <Input
               type="text"
-              value="123-3111-111"
+              value="AB100900"
               disabled
               className="bg-white/10 border-white/20 text-white opacity-60"
             />
           </div>
 
           <div>
-            <label className="text-sm opacity-75 mb-2 block">Email Address</label>
+            <label className="text-sm opacity-75 mb-2 block">Date of Birth</label>
             <Input
-              type="email"
-              value="mus@fliptin.io"
+              type="text"
+              value="01/01/2000"
+              disabled
+              className="bg-white/10 border-white/20 text-white opacity-60"
+            />
+          </div>
+
+          <div>
+            <label className="text-sm opacity-75 mb-2 block">Address</label>
+            <Input
+              type="text"
+              value="Anfa Place, Casablanca"
               disabled
               className="bg-white/10 border-white/20 text-white opacity-60"
             />
@@ -67,7 +77,7 @@ export default function OfficialDetails() {
             <label className="text-sm opacity-75 mb-2 block">Company</label>
             <Input
               type="text"
-              value="Contribution Testing"
+              value="ACME"
               disabled
               className="bg-white/10 border-white/20 text-white opacity-60"
             />
@@ -77,7 +87,7 @@ export default function OfficialDetails() {
             <label className="text-sm opacity-75 mb-2 block">Net Salary Amount</label>
             <Input
               type="text"
-              value="17000"
+              value="10,000 Dhs"
               disabled
               className="bg-white/10 border-white/20 text-white opacity-60"
             />

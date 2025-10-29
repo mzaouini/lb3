@@ -26,6 +26,7 @@ import Transactions from "./pages/app/Transactions";
 import Profile from "./pages/app/Profile";
 import BankAccounts from "./pages/app/BankAccounts";
 import Cards from "./pages/app/Cards";
+import CardSettings from "./pages/app/CardSettings";
 import OfficialDetails from "./pages/app/OfficialDetails";
 
 function Router() {
@@ -58,6 +59,7 @@ function Router() {
       <Route path="/app/profile" component={Profile} />
       <Route path="/app/bank-accounts" component={BankAccounts} />
       <Route path="/app/cards" component={Cards} />
+      <Route path="/app/card-settings" component={CardSettings} />
       <Route path="/app/official-details" component={OfficialDetails} />
       
       <Route path={"/404"} component={NotFound} />
