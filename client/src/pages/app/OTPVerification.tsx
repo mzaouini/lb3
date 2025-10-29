@@ -5,7 +5,7 @@ import { useLocation } from "wouter";
 
 export default function OTPVerification() {
   const [, setLocation] = useLocation();
-  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+  const [otp, setOtp] = useState(["1", "2", "3", "4", "5", "6"]);
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
   useEffect(() => {
@@ -78,7 +78,7 @@ export default function OTPVerification() {
         {/* Demo hint */}
         <div className="bg-mint/10 border border-mint/30 rounded-lg p-4">
           <p className="text-sm text-navy text-center">
-            <span className="font-semibold">Demo:</span> Enter any 6 digits to continue
+            <span className="font-semibold">Demo OTP Code:</span> 123456 (pre-filled)
           </p>
         </div>
 
