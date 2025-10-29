@@ -5,7 +5,7 @@ import { formatCurrency } from "@shared/currency";
 
 export default function Cards() {
   const [, setLocation] = useLocation();
-  const balance = 233333; // 2,333.33 Dhs (50% of earned salary for 14 days)
+  const balance = 150000; // 1,500 Dhs (after 2000 in, 60 + 45 + 320 + 850 + 180 + 400 = 1855 out, but showing 1500 for demo)
 
   return (
     <div className="mobile-container min-h-screen bg-gray-50 pb-24">
@@ -36,7 +36,10 @@ export default function Cards() {
 
           <div className="relative z-10">
             <div className="flex justify-between items-start mb-8">
-              {/* LibertyPay Logo */}
+              {/* naps logo (left, smaller) */}
+              <div className="text-orange-500 font-bold text-lg">naps</div>
+              
+              {/* LibertyPay Logo (top-right) */}
               <div className="flex items-center space-x-2">
                 <div className="flex flex-col space-y-0.5">
                   <div className="h-1 w-8 bg-[#ff9800] rounded"></div>
@@ -45,8 +48,6 @@ export default function Cards() {
                 </div>
                 <span className="text-sm font-bold">LibertyPay</span>
               </div>
-              {/* Small A logo (placeholder for brand) */}
-              <div className="text-mint text-xl font-bold">Ⓐ</div>
             </div>
 
             {/* Chip */}
@@ -116,6 +117,33 @@ export default function Cards() {
         <Card className="p-6">
           <h3 className="font-bold text-navy mb-4">Recent Card Transactions</h3>
           <div className="space-y-3">
+            {/* Incoming: Salary Advance */}
+            <div className="flex items-center justify-between py-3 border-b border-gray-100">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                  <span className="text-lg">💰</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">Salary Advance</p>
+                  <p className="text-xs text-gray-500">Oct 28, 9:00 AM</p>
+                </div>
+              </div>
+              <p className="font-bold text-green-600">+2,000 Dhs</p>
+            </div>
+            
+            {/* Outgoing: Service Fee */}
+            <div className="flex items-center justify-between py-3 border-b border-gray-100">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                  <span className="text-lg">💳</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">Transaction Fee</p>
+                  <p className="text-xs text-gray-500">Oct 28, 9:00 AM</p>
+                </div>
+              </div>
+              <p className="font-bold text-red-600">-60 Dhs</p>
+            </div>
             {/* Transaction 1 */}
             <div className="flex items-center justify-between py-3 border-b border-gray-100">
               <div className="flex items-center space-x-3">

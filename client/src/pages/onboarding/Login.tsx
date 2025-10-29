@@ -5,8 +5,8 @@ import { useLocation } from "wouter";
 
 export default function Login() {
   const [, setLocation] = useLocation();
-  const [phone, setPhone] = useState("");
-  const [pin, setPin] = useState("");
+  const [phone, setPhone] = useState("+212612345678");
+  const [pin, setPin] = useState("1234");
   const [error, setError] = useState("");
 
   const handleLogin = () => {

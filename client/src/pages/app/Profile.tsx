@@ -1,11 +1,15 @@
 import { Card } from "@/components/ui/card";
 import { ChevronLeft, CreditCard, History, Home, Lock, Shield, User as UserIcon, Bell, Building2, TrendingUp, FileText } from "lucide-react";
 import { useLocation } from "wouter";
-import { useAuth } from "@/_core/hooks/useAuth";
-
 export default function Profile() {
   const [, setLocation] = useLocation();
-  const { user, logout } = useAuth();
+  const userName = sessionStorage.getItem("userName") || "Meryem Guezzour";
+  
+  const logout = () => {
+    sessionStorage.removeItem("isLoggedIn");
+    sessionStorage.removeItem("userName");
+    setLocation("/");
+  };
 
   const profileItems = [
     {
@@ -81,7 +85,7 @@ export default function Profile() {
       </div>
 
       <div className="px-8 py-6 space-y-8">
-        <h1 className="text-3xl font-bold">{user?.name || "Meryem Guezzour"}</h1>
+        <h1 className="text-3xl font-bold">{userName}</h1>
 
         {/* Profile Section */}
         <div className="space-y-4">

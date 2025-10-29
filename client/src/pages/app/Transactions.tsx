@@ -120,56 +120,55 @@ export default function Transactions() {
   ];
 
   return (
-    <div className="mobile-container min-h-screen bg-navy text-white pb-24">
-      <div className="p-6">
+    <div className="mobile-container min-h-screen bg-gray-50 pb-24">
+      <div className="liberty-gradient text-white p-6 rounded-b-3xl">
         <button
           onClick={() => setLocation("/app/home")}
-          className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+          className="p-2 hover:bg-white/10 rounded-lg transition-colors mb-4"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
+        <h1 className="text-2xl font-bold">Transaction History</h1>
       </div>
 
-      <div className="px-8 py-6 space-y-6">
-        <div className="space-y-4">
-          <h1 className="text-3xl font-bold">Transaction History</h1>
-          <div className="h-1 w-16 bg-mint rounded-full"></div>
-        </div>
+      <div className="px-6 py-6 space-y-6">
 
         {/* Date Range */}
-        <div className="grid grid-cols-2 gap-4">
-          <div>
-            <label className="text-sm opacity-75 mb-2 block">Start Date</label>
-            <Input
-              type="text"
-              value={startDate}
-              onChange={(e) => setStartDate(e.target.value)}
-              className="bg-white/10 border-white/20 text-white"
-            />
+        <Card className="p-4">
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="text-sm text-gray-600 mb-2 block">Start Date</label>
+              <Input
+                type="text"
+                value={startDate}
+                onChange={(e) => setStartDate(e.target.value)}
+                className="bg-white border-gray-300"
+              />
+            </div>
+            <div>
+              <label className="text-sm text-gray-600 mb-2 block">End Date</label>
+              <Input
+                type="text"
+                value={endDate}
+                onChange={(e) => setEndDate(e.target.value)}
+                className="bg-white border-gray-300"
+              />
+            </div>
           </div>
-          <div>
-            <label className="text-sm opacity-75 mb-2 block">End Date</label>
-            <Input
-              type="text"
-              value={endDate}
-              onChange={(e) => setEndDate(e.target.value)}
-              className="bg-white/10 border-white/20 text-white"
-            />
-          </div>
-        </div>
+        </Card>
 
         {/* Total */}
-        <div className="text-center py-6">
-          <p className="text-sm opacity-75 mb-2">Total Transaction</p>
-          <p className="text-4xl font-bold text-mint">{formatCurrency(transactions.reduce((sum, tx) => sum + tx.amount, 0))}</p>
-        </div>
+        <Card className="p-6 text-center">
+          <p className="text-sm text-gray-600 mb-2">Total Transaction</p>
+          <p className="text-4xl font-bold text-teal">{formatCurrency(transactions.reduce((sum, tx) => sum + tx.amount, 0))}</p>
+        </Card>
 
         {/* Tabs */}
-        <div className="flex space-x-4 border-b border-white/20">
-          <button className="pb-3 border-b-2 border-mint text-mint font-semibold">All</button>
-          <button className="pb-3 opacity-50">Successful</button>
-          <button className="pb-3 opacity-50">In-Progress</button>
-          <button className="pb-3 opacity-50">Failed</button>
+        <div className="flex space-x-4 border-b border-gray-200">
+          <button className="pb-3 border-b-2 border-teal text-teal font-semibold">All</button>
+          <button className="pb-3 text-gray-500">Successful</button>
+          <button className="pb-3 text-gray-500">In-Progress</button>
+          <button className="pb-3 text-gray-500">Failed</button>
         </div>
 
         {/* Transactions List */}
@@ -177,26 +176,26 @@ export default function Transactions() {
           <div className="space-y-6">
             {/* October Transactions */}
             <div className="space-y-4">
-              <p className="text-mint font-semibold text-lg">October 2025</p>
+              <p className="text-teal font-semibold text-lg">October 2025</p>
               {transactions.filter(tx => tx.month === 'October').map((tx) => (
               <Card 
                 key={tx.id} 
-                className="bg-white/10 border-white/20 p-4 cursor-pointer hover:bg-white/15 transition-colors"
+                className="p-4 cursor-pointer hover:shadow-md transition-shadow"
                 onClick={() => setLocation("/app/transaction-details")}
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                      tx.status === 'completed' ? 'bg-green-500/20' : 'bg-orange-500/20'
+                      tx.status === 'completed' ? 'bg-green-100' : 'bg-orange-100'
                     }`}>
-                      <span className={tx.status === 'completed' ? 'text-green-500' : 'text-orange-500'}>
+                      <span className={tx.status === 'completed' ? 'text-green-600' : 'text-orange-600'}>
                         {tx.status === 'completed' ? '✓' : '⚠️'}
                       </span>
                     </div>
                     <div>
-                      <p className="font-semibold">{tx.title}</p>
-                      <p className="text-xs opacity-75">{tx.subtitle}</p>
-                      <p className="text-xs opacity-60">{tx.date}</p>
+                      <p className="font-semibold text-navy">{tx.title}</p>
+                      <p className="text-xs text-gray-600">{tx.subtitle}</p>
+                      <p className="text-xs text-gray-500">{tx.date}</p>
                     </div>
                   </div>
                   <div className="text-right">
@@ -214,33 +213,33 @@ export default function Transactions() {
             
             {/* September Transactions */}
             <div className="space-y-4">
-              <p className="text-mint font-semibold text-lg">September 2025</p>
+              <p className="text-teal font-semibold text-lg">September 2025</p>
               {transactions.filter(tx => tx.month === 'September').map((tx) => (
               <Card 
                 key={tx.id} 
-                className="bg-white/10 border-white/20 p-4 cursor-pointer hover:bg-white/15 transition-colors"
+                className="p-4 cursor-pointer hover:shadow-md transition-shadow"
                 onClick={() => setLocation("/app/transaction-details")}
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                      tx.status === 'completed' ? 'bg-green-500/20' : 'bg-orange-500/20'
+                      tx.status === 'completed' ? 'bg-green-100' : 'bg-orange-100'
                     }`}>
-                      <span className={tx.status === 'completed' ? 'text-green-500' : 'text-orange-500'}>
+                      <span className={tx.status === 'completed' ? 'text-green-600' : 'text-orange-600'}>
                         {tx.status === 'completed' ? '✓' : '⚠️'}
                       </span>
                     </div>
                     <div>
-                      <p className="font-semibold">{tx.title}</p>
-                      <p className="text-xs opacity-75">{tx.subtitle}</p>
-                      <p className="text-xs opacity-60">{tx.date}</p>
+                      <p className="font-semibold text-navy">{tx.title}</p>
+                      <p className="text-xs text-gray-600">{tx.subtitle}</p>
+                      <p className="text-xs text-gray-500">{tx.date}</p>
                     </div>
                   </div>
                   <div className="text-right">
                     <p className={`font-bold ${
-                      tx.type === 'credit' ? 'text-green-500' : 'text-red-500'
+                      tx.type === 'credit' ? 'text-green-600' : 'text-red-600'
                     }`}>{tx.type === 'credit' ? '+' : ''}{formatCurrency(Math.abs(tx.amount))}</p>
-                    <p className="text-xs opacity-75">
+                    <p className="text-xs text-gray-500">
                       {tx.status === 'completed' ? 'Instant' : 'In Progress'}
                     </p>
                   </div>

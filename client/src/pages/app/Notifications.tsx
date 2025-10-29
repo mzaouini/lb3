@@ -73,8 +73,8 @@ export default function Notifications() {
   };
 
   return (
-    <div className="mobile-container min-h-screen bg-navy text-white pb-24">
-      <div className="p-6">
+    <div className="mobile-container min-h-screen bg-gray-50 pb-24">
+      <div className="liberty-gradient text-white p-6 rounded-b-3xl">
         <div className="flex items-center justify-between">
           <button
             onClick={() => setLocation("/app/home")}
@@ -86,29 +86,22 @@ export default function Notifications() {
             <span className="bg-mint text-navy px-2 py-1 rounded-full text-xs font-bold">BETA</span>
           </div>
         </div>
+        <h1 className="text-2xl font-bold mt-4">Notifications</h1>
       </div>
 
-      <div className="px-8 py-6 space-y-6">
-        <div className="space-y-4">
-          <div className="flex items-center space-x-3">
-            <Bell className="w-8 h-8 text-mint" />
-            <h1 className="text-3xl font-bold">Notifications</h1>
-          </div>
-          <div className="h-1 w-16 bg-mint rounded-full"></div>
-        </div>
-
+      <div className="px-6 py-6 space-y-6">
         {/* Unread Count */}
-        <div className="bg-white/10 border border-white/20 rounded-lg p-4">
-          <p className="text-sm opacity-75">You have <span className="font-bold text-mint">{notifications.filter(n => !n.read).length}</span> unread notifications</p>
-        </div>
+        <Card className="p-4">
+          <p className="text-sm text-gray-600">You have <span className="font-bold text-teal">{notifications.filter(n => !n.read).length}</span> unread notifications</p>
+        </Card>
 
         {/* Notifications List */}
         <div className="space-y-4">
           {notifications.map((notification) => (
             <Card 
               key={notification.id}
-              className={`border-white/20 p-4 cursor-pointer hover:bg-white/15 transition-colors ${
-                notification.read ? 'bg-white/5' : 'bg-white/10'
+              className={`p-4 cursor-pointer hover:shadow-md transition-shadow ${
+                notification.read ? 'bg-white' : 'bg-blue-50'
               }`}
             >
               <div className="flex items-start space-x-4">
@@ -117,13 +110,13 @@ export default function Notifications() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between mb-1">
-                    <h3 className="font-semibold">{notification.title}</h3>
+                    <h3 className="font-semibold text-navy">{notification.title}</h3>
                     {!notification.read && (
-                      <div className="w-2 h-2 bg-mint rounded-full flex-shrink-0 ml-2 mt-2"></div>
+                      <div className="w-2 h-2 bg-teal rounded-full flex-shrink-0 ml-2 mt-2"></div>
                     )}
                   </div>
-                  <p className="text-sm opacity-75 mb-2">{notification.message}</p>
-                  <p className="text-xs opacity-60">{notification.time}</p>
+                  <p className="text-sm text-gray-600 mb-2">{notification.message}</p>
+                  <p className="text-xs text-gray-500">{notification.time}</p>
                 </div>
               </div>
             </Card>

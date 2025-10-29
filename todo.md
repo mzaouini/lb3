@@ -254,3 +254,16 @@
 - [x] All images cropped and placed in /client/public/demo/ folder
 - [ ] Test complete onboarding flow with dummy images
 - [ ] Push updated code to GitHub for Vercel redeployment
+
+## Final UX/UI Polish & Fixes (User Requested)
+- [x] 0. Verify color scheme consistency (navy/mint/gold) with gradient overlays
+- [x] 1. Redesign card: LibertyPay logo top-right, naps logo left (smaller), remove "A" badge, keep chip/contactless
+- [ ] 2. Add landing page with login screen and signup CTA below
+- [ ] 3. Prefill ALL input fields throughout app for smooth demo flow
+- [ ] 4. Ensure UX/color consistency across iOS/Android/browsers (mobile-first)
+- [x] 5. Replace %VITE_APP_TITLE% in browser tab with 3-dash Liberty logo favicon
+- [ ] 6. Fix Profile screen not working (investigate routing/component issue)
+- [x] 7. Fix contrast on Notifications & Transaction History screens (use white or original navy/mint)
+- [x] 8. Update Card tab transactions: +2000 Dhs in, -60 Dhs out, balance 1500 Dhs
+- [x] 8a. Add realistic Moroccan transactions: Café Casablanca -45, Marjane -320, Zara -850, Pizza Hut -180, Afriquia -400
+- [x] 8b. Ensure all card transactions sum correctly to show 1500 Dhs balance

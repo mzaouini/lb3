@@ -39,7 +39,7 @@ function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
-      <Route path={"/"} component={Splash} />
+      <Route path={"/"} component={Login} />
       
       {/* Onboarding Routes */}
       <Route path="/onboarding/splash" component={Splash} />
