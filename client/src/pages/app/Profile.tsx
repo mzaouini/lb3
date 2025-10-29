@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { ChevronLeft, CreditCard, History, Home, Lock, Shield, User as UserIcon } from "lucide-react";
+import { ChevronLeft, CreditCard, History, Home, Lock, Shield, User as UserIcon, Bell, Building2, TrendingUp, FileText } from "lucide-react";
 import { useLocation } from "wouter";
 import { useAuth } from "@/_core/hooks/useAuth";
 
@@ -7,7 +7,7 @@ export default function Profile() {
   const [, setLocation] = useLocation();
   const { user, logout } = useAuth();
 
-  const menuItems = [
+  const profileItems = [
     {
       icon: <UserIcon className="w-6 h-6" />,
       title: "Official Details",
@@ -18,6 +18,36 @@ export default function Profile() {
       title: "Bank Accounts",
       action: () => setLocation("/app/bank-accounts"),
     },
+  ];
+
+  const betaItems = [
+    {
+      icon: <Bell className="w-6 h-6" />,
+      title: "Notifications",
+      badge: "BETA",
+      action: () => setLocation("/app/notifications"),
+    },
+    {
+      icon: <Building2 className="w-6 h-6" />,
+      title: "Employer Details",
+      badge: "BETA",
+      action: () => setLocation("/app/employer-info"),
+    },
+    {
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: "Limits & Usage",
+      badge: "BETA",
+      action: () => setLocation("/app/limits"),
+    },
+    {
+      icon: <FileText className="w-6 h-6" />,
+      title: "Receipt History",
+      badge: "BETA",
+      action: () => alert("Receipt history coming soon"),
+    },
+  ];
+
+  const securityItems = [
     {
       icon: <Lock className="w-6 h-6" />,
       title: "Change Pin",
@@ -57,7 +87,7 @@ export default function Profile() {
         <div className="space-y-4">
           <p className="text-sm opacity-75 font-semibold">Profile</p>
           <div className="space-y-3">
-            {menuItems.slice(0, 2).map((item, index) => (
+            {profileItems.map((item, index) => (
               <Card
                 key={index}
                 onClick={item.action}
@@ -75,11 +105,43 @@ export default function Profile() {
           </div>
         </div>
 
+        {/* BETA Features Section */}
+        <div className="space-y-4">
+          <div className="flex items-center space-x-2">
+            <p className="text-sm opacity-75 font-semibold">New Features</p>
+            <span className="bg-mint text-navy px-2 py-0.5 rounded-full text-xs font-bold">BETA</span>
+          </div>
+          <div className="space-y-3">
+            {betaItems.map((item, index) => (
+              <Card
+                key={index}
+                onClick={item.action}
+                className="bg-white/10 border-white/20 p-4 cursor-pointer hover:bg-white/15 transition-colors flex items-center justify-between"
+              >
+                <div className="flex items-center space-x-4">
+                  <div className="w-10 h-10 bg-mint/20 rounded-full flex items-center justify-center">
+                    {item.icon}
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="font-semibold">{item.title}</span>
+                    {item.badge && (
+                      <span className="bg-mint text-navy px-2 py-0.5 rounded-full text-xs font-bold">
+                        {item.badge}
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <ChevronLeft className="w-5 h-5 rotate-180" />
+              </Card>
+            ))}
+          </div>
+        </div>
+
         {/* Security Section */}
         <div className="space-y-4">
           <p className="text-sm opacity-75 font-semibold">Security</p>
           <div className="space-y-3">
-            {menuItems.slice(2).map((item, index) => (
+            {securityItems.map((item, index) => (
               <Card
                 key={index}
                 onClick={item.action}

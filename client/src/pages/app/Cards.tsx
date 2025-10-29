@@ -114,10 +114,85 @@ export default function Cards() {
 
         {/* Recent Transactions */}
         <Card className="p-6">
-          <h3 className="font-bold text-navy mb-4">Recent Transactions</h3>
-          <div className="text-center py-8 text-gray-400">
-            <p className="text-sm">No card transactions yet</p>
+          <h3 className="font-bold text-navy mb-4">Recent Card Transactions</h3>
+          <div className="space-y-3">
+            {/* Transaction 1 */}
+            <div className="flex items-center justify-between py-3 border-b border-gray-100">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                  <span className="text-lg">☕</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">Café Casablanca</p>
+                  <p className="text-xs text-gray-500">Today, 10:30 AM</p>
+                </div>
+              </div>
+              <p className="font-bold text-red-600">-45 Dhs</p>
+            </div>
+            
+            {/* Transaction 2 */}
+            <div className="flex items-center justify-between py-3 border-b border-gray-100">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                  <span className="text-lg">🛒</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">Marjane Supermarket</p>
+                  <p className="text-xs text-gray-500">Yesterday, 6:15 PM</p>
+                </div>
+              </div>
+              <p className="font-bold text-red-600">-320 Dhs</p>
+            </div>
+            
+            {/* Transaction 3 */}
+            <div className="flex items-center justify-between py-3 border-b border-gray-100">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                  <span className="text-lg">🛍️</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">Zara Morocco Mall</p>
+                  <p className="text-xs text-gray-500">Oct 27, 3:45 PM</p>
+                </div>
+              </div>
+              <p className="font-bold text-red-600">-850 Dhs</p>
+            </div>
+            
+            {/* Transaction 4 */}
+            <div className="flex items-center justify-between py-3 border-b border-gray-100">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                  <span className="text-lg">🍕</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">Pizza Hut</p>
+                  <p className="text-xs text-gray-500">Oct 25, 8:20 PM</p>
+                </div>
+              </div>
+              <p className="font-bold text-red-600">-180 Dhs</p>
+            </div>
+            
+            {/* Transaction 5 */}
+            <div className="flex items-center justify-between py-3">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center">
+                  <span className="text-lg">⛽</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">Afriquia Gas Station</p>
+                  <p className="text-xs text-gray-500">Oct 23, 9:00 AM</p>
+                </div>
+              </div>
+              <p className="font-bold text-red-600">-400 Dhs</p>
+            </div>
           </div>
+          
+          <button 
+            onClick={() => alert("Full card transaction history coming soon")}
+            className="w-full mt-4 text-teal font-semibold text-sm hover:underline"
+          >
+            View All Transactions
+          </button>
         </Card>
       </div>
 

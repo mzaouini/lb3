@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { APP_TITLE } from "@/const";
 import { formatCurrency } from "@shared/currency";
-import { ArrowRight, CreditCard, History, User } from "lucide-react";
+import { ArrowRight, CreditCard, History, User, Bell } from "lucide-react";
 import { useLocation } from "wouter";
 
 export default function AppHome() {
@@ -22,12 +22,21 @@ export default function AppHome() {
       <div className="liberty-gradient text-white p-8 pb-32 rounded-b-3xl">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-2xl font-bold">Hi, {userName}</h1>
-          <button
-            onClick={() => setLocation("/app/profile")}
-            className="p-2 hover:bg-white/10 rounded-full transition-colors"
-          >
-            <User className="w-6 h-6" />
-          </button>
+          <div className="flex items-center space-x-2">
+            <button
+              onClick={() => setLocation("/app/notifications")}
+              className="p-2 hover:bg-white/10 rounded-full transition-colors relative"
+            >
+              <Bell className="w-6 h-6" />
+              <span className="absolute top-1 right-1 w-2 h-2 bg-mint rounded-full"></span>
+            </button>
+            <button
+              onClick={() => setLocation("/app/profile")}
+              className="p-2 hover:bg-white/10 rounded-full transition-colors"
+            >
+              <User className="w-6 h-6" />
+            </button>
+          </div>
         </div>
       </div>
 

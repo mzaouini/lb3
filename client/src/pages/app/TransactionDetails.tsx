@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, Download, Share2, CheckCircle2, Clock } from "lucide-react";
+import { ChevronLeft, Download, Share2, CheckCircle2, Clock, Mail } from "lucide-react";
 import { useLocation } from "wouter";
+import { toast } from "sonner";
 
 export default function TransactionDetails() {
   const [, setLocation] = useLocation();
@@ -152,22 +153,98 @@ export default function TransactionDetails() {
         </div>
 
         {/* Action Buttons */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="space-y-3">
           <Button
             variant="outline"
-            className="liberty-button-outline"
-            onClick={() => alert("Download receipt functionality")}
+            className="liberty-button-outline w-full"
+            onClick={() => {
+              const receiptText = `
+LIBERTY PAY - TRANSACTION RECEIPT
+================================
+
+Transaction Reference: ${transaction.reference}
+Date: ${transaction.date} | ${transaction.time}
+Status: ${transaction.status.toUpperCase()}
+
+TRANSACTION DETAILS
+-------------------
+Requested Amount: ${transaction.amount} Dhs
+Service Fee: ${transaction.fee} Dhs
+Total Amount: ${transaction.total} Dhs
+
+BANK DETAILS
+------------
+Recipient: ${transaction.recipient}
+Bank Name: ${transaction.bankName}
+Account Number: ${transaction.accountNumber}
+IBAN: ${transaction.iban}
+
+Thank you for using Liberty Pay!
+For support, contact: support@libertypay.ma
+              `.trim();
+              
+              const blob = new Blob([receiptText], { type: 'text/plain' });
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.href = url;
+              a.download = `LibertyPay_Receipt_${transaction.reference}.txt`;
+              document.body.appendChild(a);
+              a.click();
+              document.body.removeChild(a);
+              URL.revokeObjectURL(url);
+              toast.success('Receipt downloaded successfully');
+            }}
           >
             <Download className="w-5 h-5 mr-2" />
-            Download
+            Download Receipt
           </Button>
           <Button
             variant="outline"
-            className="liberty-button-outline"
-            onClick={() => alert("Share receipt functionality")}
+            className="liberty-button-outline w-full"
+            onClick={async () => {
+              const receiptText = `Liberty Pay Receipt\nRef: ${transaction.reference}\nAmount: ${transaction.amount} Dhs\nFee: ${transaction.fee} Dhs\nTotal: ${transaction.total} Dhs\nDate: ${transaction.date} ${transaction.time}`;
+              
+              if (navigator.share) {
+                try {
+                  await navigator.share({
+                    title: 'Liberty Pay Receipt',
+                    text: receiptText,
+                  });
+                } catch (err) {
+                  console.log('Share cancelled');
+                }
+              } else {
+                await navigator.clipboard.writeText(receiptText);
+                toast.success('Receipt copied to clipboard');
+              }
+            }}
           >
             <Share2 className="w-5 h-5 mr-2" />
-            Share
+            Share Receipt
+          </Button>
+          <Button
+            variant="outline"
+            className="liberty-button-outline w-full"
+            onClick={() => {
+              const subject = encodeURIComponent(`Liberty Pay Receipt - ${transaction.reference}`);
+              const body = encodeURIComponent(`
+Transaction Reference: ${transaction.reference}
+Date: ${transaction.date} | ${transaction.time}
+
+Requested Amount: ${transaction.amount} Dhs
+Service Fee: ${transaction.fee} Dhs
+Total Amount: ${transaction.total} Dhs
+
+Bank: ${transaction.bankName}
+Account: ${transaction.accountNumber}
+Recipient: ${transaction.recipient}
+              `.trim());
+              
+              window.location.href = `mailto:?subject=${subject}&body=${body}`;
+            }}
+          >
+            <Mail className="w-5 h-5 mr-2" />
+            Email Receipt
           </Button>
         </div>
       </div>

@@ -216,20 +216,23 @@
 - [x] Ensure edited data creates NEW user records (doesn't update Meryem's data)
 
 ## Additional Demo Features (User Requested)
-- [ ] Create Transaction Details screen (tap transaction → full breakdown with amount, fee, bank details, reference, timeline)
-- [ ] Add Email Receipt option in Success screen
-- [ ] Add Receipt History section in Profile screen
-- [ ] Create Push Notifications / Notification Center (BETA feature)
-- [ ] Add mock notifications for transaction approvals and completions
-- [ ] Expand transaction history to 5-6 transactions across October and September
-- [ ] Add realistic transaction dates and amounts
-- [ ] Create Detailed Employer Info screen (BETA feature)
-- [ ] Show Employee ID, Department, Join date, Contract type
-- [ ] Add Card Transaction History section in Cards screen
-- [ ] Show card transactions: Coffee shop, Grocery, Online shopping
-- [ ] Create Limits & Settings display
-- [ ] Show daily advance limit (5,000 Dhs) and monthly limit (8,000 Dhs)
-- [ ] Display current month usage (3,120 Dhs) and remaining (4,880 Dhs)
+- [x] Create Transaction Details screen (tap transaction → full breakdown with amount, fee, bank details, reference, timeline)
+- [x] Add Email Receipt option in Transaction Details screen
+- [x] Add Receipt History section in Profile screen (marked as BETA, coming soon)
+- [x] Create Push Notifications / Notification Center (BETA feature)
+- [x] Add mock notifications for transaction approvals and completions (5 notifications)
+- [x] Expand transaction history to 5-6 transactions across October and September
+- [x] Add realistic transaction dates and amounts (now showing 10 transactions: 5 advances + 5 fees)
+- [x] Create Detailed Employer Info screen (BETA feature)
+- [x] Show Employee ID, Department, Join date, Contract type
+- [x] Add Card Transaction History section in Cards screen
+- [x] Show card transactions: Coffee shop, Grocery, Online shopping (5 transactions)
+- [x] Create Limits & Settings display (BETA feature)
+- [x] Show daily advance limit (5,000 Dhs) and monthly limit (8,000 Dhs)
+- [x] Display current month usage (3,120 Dhs) and remaining (4,880 Dhs)
+- [x] Add notification bell icon to Home screen with unread indicator
+- [x] Add all new screens to Profile menu with BETA badges
+- [x] Add routes for all new screens in App.tsx
 
 ## Fee Deduction Clarification
 - [x] Update Review screen message to clarify fee is deducted immediately

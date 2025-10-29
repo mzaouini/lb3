@@ -30,6 +30,10 @@ import Cards from "./pages/app/Cards";
 import CardSettings from "./pages/app/CardSettings";
 import SalaryBreakdown from "./pages/app/SalaryBreakdown";
 import OfficialDetails from "./pages/app/OfficialDetails";
+import TransactionDetails from "./pages/app/TransactionDetails";
+import Notifications from "./pages/app/Notifications";
+import EmployerInfo from "./pages/app/EmployerInfo";
+import Limits from "./pages/app/Limits";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -65,6 +69,10 @@ function Router() {
       <Route path="/app/card-settings" component={CardSettings} />
       <Route path="/app/salary-breakdown" component={SalaryBreakdown} />
       <Route path="/app/official-details" component={OfficialDetails} />
+      <Route path="/app/transaction-details" component={TransactionDetails} />
+      <Route path="/app/notifications" component={Notifications} />
+      <Route path="/app/employer-info" component={EmployerInfo} />
+      <Route path="/app/limits" component={Limits} />
       
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
