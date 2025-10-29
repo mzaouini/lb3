@@ -143,3 +143,13 @@
 - [x] Show masked card number on card display (**** **** **** 1983)
 - [x] Update card design to match reference (prepaid card style)
 - [x] Update card holder name to Meryem Guezzour
+
+## Card Design Update (User Reference)
+- [x] Update card design to match reference image
+- [x] Replace logo with LibertyPay logo (orange stacked 3-bar icon)
+- [x] Add decorative teal/mint swirl pattern on right side of card
+- [x] Add gold chip with contactless symbol
+- [x] Format card number as 5335 7600 0000 1983
+- [x] Update cardholder name to MERYEM GUEZZOUR
+- [x] Keep Mastercard logo (red/orange circles)
+- [x] Use dark purple background (#2d1b4e) matching reference
