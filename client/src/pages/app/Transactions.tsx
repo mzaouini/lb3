@@ -10,20 +10,112 @@ export default function Transactions() {
   const [startDate, setStartDate] = useState("01 Oct, 2025");
   const [endDate, setEndDate] = useState("29 Oct, 2025");
 
+  // Expanded transaction history - each advance shows as 2 transactions (advance + fee)
   const transactions = [
+    // October 29 - 2000 Dhs advance
     {
       id: 1,
-      title: "Meryem - ACME",
-      date: "29 Oct 2025 | 12:48 PM",
-      amount: 206000, // 2,060 Dhs (2,000 + 60 fee)
-      status: "completed",
+      title: 'Salary Advance',
+      subtitle: 'Meryem - ACME',
+      date: '29 Oct 2025 | 12:48 PM',
+      amount: 2000,
+      type: 'credit',
+      status: 'completed',
+      month: 'October'
     },
     {
       id: 2,
-      title: "Meryem - ACME",
-      date: "15 Oct 2025 | 09:30 AM",
-      amount: 106000, // 1,060 Dhs (1,000 + 60 fee)
-      status: "completed",
+      title: 'Service Fee',
+      subtitle: 'Transaction Fee',
+      date: '29 Oct 2025 | 12:48 PM',
+      amount: -60,
+      type: 'debit',
+      status: 'completed',
+      month: 'October'
+    },
+    // October 15 - 1000 Dhs advance
+    {
+      id: 3,
+      title: 'Salary Advance',
+      subtitle: 'Meryem - ACME',
+      date: '15 Oct 2025 | 09:30 AM',
+      amount: 1000,
+      type: 'credit',
+      status: 'completed',
+      month: 'October'
+    },
+    {
+      id: 4,
+      title: 'Service Fee',
+      subtitle: 'Transaction Fee',
+      date: '15 Oct 2025 | 09:30 AM',
+      amount: -60,
+      type: 'debit',
+      status: 'completed',
+      month: 'October'
+    },
+    // October 8 - 500 Dhs advance
+    {
+      id: 5,
+      title: 'Salary Advance',
+      subtitle: 'Meryem - ACME',
+      date: '08 Oct 2025 | 02:15 PM',
+      amount: 500,
+      type: 'credit',
+      status: 'completed',
+      month: 'October'
+    },
+    {
+      id: 6,
+      title: 'Service Fee',
+      subtitle: 'Transaction Fee',
+      date: '08 Oct 2025 | 02:15 PM',
+      amount: -60,
+      type: 'debit',
+      status: 'completed',
+      month: 'October'
+    },
+    // September 25 - 1500 Dhs advance
+    {
+      id: 7,
+      title: 'Salary Advance',
+      subtitle: 'Meryem - ACME',
+      date: '25 Sep 2025 | 11:20 AM',
+      amount: 1500,
+      type: 'credit',
+      status: 'completed',
+      month: 'September'
+    },
+    {
+      id: 8,
+      title: 'Service Fee',
+      subtitle: 'Transaction Fee',
+      date: '25 Sep 2025 | 11:20 AM',
+      amount: -60,
+      type: 'debit',
+      status: 'completed',
+      month: 'September'
+    },
+    // September 10 - 2000 Dhs advance
+    {
+      id: 9,
+      title: 'Salary Advance',
+      subtitle: 'Meryem - ACME',
+      date: '10 Sep 2025 | 04:45 PM',
+      amount: 2000,
+      type: 'credit',
+      status: 'completed',
+      month: 'September'
+    },
+    {
+      id: 10,
+      title: 'Service Fee',
+      subtitle: 'Transaction Fee',
+      date: '10 Sep 2025 | 04:45 PM',
+      amount: -60,
+      type: 'debit',
+      status: 'completed',
+      month: 'September'
     },
   ];
 
@@ -82,10 +174,16 @@ export default function Transactions() {
 
         {/* Transactions List */}
         {transactions.length > 0 ? (
-          <div className="space-y-4">
-            <p className="text-mint font-semibold">October 29</p>
-            {transactions.map((tx) => (
-              <Card key={tx.id} className="bg-white/10 border-white/20 p-4">
+          <div className="space-y-6">
+            {/* October Transactions */}
+            <div className="space-y-4">
+              <p className="text-mint font-semibold text-lg">October 2025</p>
+              {transactions.filter(tx => tx.month === 'October').map((tx) => (
+              <Card 
+                key={tx.id} 
+                className="bg-white/10 border-white/20 p-4 cursor-pointer hover:bg-white/15 transition-colors"
+                onClick={() => setLocation("/app/transaction-details")}
+              >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
@@ -97,13 +195,14 @@ export default function Transactions() {
                     </div>
                     <div>
                       <p className="font-semibold">{tx.title}</p>
-                      <p className="text-sm opacity-75">{tx.date}</p>
+                      <p className="text-xs opacity-75">{tx.subtitle}</p>
+                      <p className="text-xs opacity-60">{tx.date}</p>
                     </div>
                   </div>
                   <div className="text-right">
                     <p className={`font-bold ${
-                      tx.status === 'completed' ? 'text-green-500' : 'text-orange-500'
-                    }`}>{formatCurrency(tx.amount)}</p>
+                      tx.type === 'credit' ? 'text-green-500' : 'text-red-500'
+                    }`}>{tx.type === 'credit' ? '+' : ''}{formatCurrency(Math.abs(tx.amount))}</p>
                     <p className="text-xs opacity-75">
                       {tx.status === 'completed' ? 'Instant' : 'In Progress'}
                     </p>
@@ -111,6 +210,44 @@ export default function Transactions() {
                 </div>
               </Card>
             ))}
+            </div>
+            
+            {/* September Transactions */}
+            <div className="space-y-4">
+              <p className="text-mint font-semibold text-lg">September 2025</p>
+              {transactions.filter(tx => tx.month === 'September').map((tx) => (
+              <Card 
+                key={tx.id} 
+                className="bg-white/10 border-white/20 p-4 cursor-pointer hover:bg-white/15 transition-colors"
+                onClick={() => setLocation("/app/transaction-details")}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
+                      tx.status === 'completed' ? 'bg-green-500/20' : 'bg-orange-500/20'
+                    }`}>
+                      <span className={tx.status === 'completed' ? 'text-green-500' : 'text-orange-500'}>
+                        {tx.status === 'completed' ? '✓' : '⚠️'}
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-semibold">{tx.title}</p>
+                      <p className="text-xs opacity-75">{tx.subtitle}</p>
+                      <p className="text-xs opacity-60">{tx.date}</p>
+                    </div>
+                  </div>
+                  <div className="text-right">
+                    <p className={`font-bold ${
+                      tx.type === 'credit' ? 'text-green-500' : 'text-red-500'
+                    }`}>{tx.type === 'credit' ? '+' : ''}{formatCurrency(Math.abs(tx.amount))}</p>
+                    <p className="text-xs opacity-75">
+                      {tx.status === 'completed' ? 'Instant' : 'In Progress'}
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+            </div>
           </div>
         ) : (
           <div className="text-center py-12 opacity-50">

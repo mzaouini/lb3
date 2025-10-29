@@ -92,20 +92,21 @@ export default function AppHome() {
           </button>
         </div>
 
-        {/* Mock transaction */}
-        <Card className="p-4 hover:shadow-md transition-shadow cursor-pointer">
+        {/* Recent transactions - showing latest advance + fee */}
+        <Card className="p-4 hover:shadow-md transition-shadow cursor-pointer" onClick={() => setLocation("/app/transactions")}>
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                <History className="w-6 h-6 text-gold" />
+              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                <ArrowRight className="w-6 h-6 text-green-600 rotate-[-45deg]" />
               </div>
               <div>
-                <p className="font-semibold text-navy">Meryem - ACME</p>
-                <p className="text-sm text-gray-500">29 Oct 2025 | 12:48 PM</p>
+                <p className="font-semibold text-navy">Salary Advance</p>
+                <p className="text-xs text-gray-500">Meryem - ACME</p>
+                <p className="text-xs text-gray-400">29 Oct 2025 | 12:48 PM</p>
               </div>
             </div>
             <div className="text-right">
-              <p className="font-bold text-green-600">2,060 Dhs</p>
+              <p className="font-bold text-green-600">+2,000 Dhs</p>
               <div className="flex items-center space-x-1">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 <p className="text-xs text-gray-500">Instant</p>
@@ -114,9 +115,27 @@ export default function AppHome() {
           </div>
         </Card>
 
-        <div className="text-center py-8 text-gray-400">
-          <p className="text-sm">No more transactions</p>
-        </div>
+        <Card className="p-4 hover:shadow-md transition-shadow cursor-pointer" onClick={() => setLocation("/app/transactions")}>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                <ArrowRight className="w-6 h-6 text-red-600 rotate-[45deg]" />
+              </div>
+              <div>
+                <p className="font-semibold text-navy">Service Fee</p>
+                <p className="text-xs text-gray-500">Transaction Fee</p>
+                <p className="text-xs text-gray-400">29 Oct 2025 | 12:48 PM</p>
+              </div>
+            </div>
+            <div className="text-right">
+              <p className="font-bold text-red-600">-60 Dhs</p>
+              <div className="flex items-center space-x-1">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <p className="text-xs text-gray-500">Instant</p>
+              </div>
+            </div>
+          </div>
+        </Card>
       </div>
 
       {/* Bottom Navigation */}

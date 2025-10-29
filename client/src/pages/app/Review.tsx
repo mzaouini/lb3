@@ -63,7 +63,7 @@ export default function Review() {
         <div className="bg-blue-500/20 border border-blue-400/30 rounded-lg p-4 flex items-start space-x-3">
           <div className="text-2xl">ℹ️</div>
           <p className="text-sm opacity-90">
-            The amount and service fee will be deducted from your next salary that the employer processes
+            The amount will be deducted from your next salary that the employer payroll processes. Service fee has been deducted from this advance.
           </p>
         </div>
       </div>

@@ -214,3 +214,28 @@
 - [x] Make all prefilled fields editable for custom demo data
 - [x] Change "National ID / Iqamah" to "CIN (National ID)" in PersonalDetails
 - [x] Ensure edited data creates NEW user records (doesn't update Meryem's data)
+
+## Additional Demo Features (User Requested)
+- [ ] Create Transaction Details screen (tap transaction → full breakdown with amount, fee, bank details, reference, timeline)
+- [ ] Add Email Receipt option in Success screen
+- [ ] Add Receipt History section in Profile screen
+- [ ] Create Push Notifications / Notification Center (BETA feature)
+- [ ] Add mock notifications for transaction approvals and completions
+- [ ] Expand transaction history to 5-6 transactions across October and September
+- [ ] Add realistic transaction dates and amounts
+- [ ] Create Detailed Employer Info screen (BETA feature)
+- [ ] Show Employee ID, Department, Join date, Contract type
+- [ ] Add Card Transaction History section in Cards screen
+- [ ] Show card transactions: Coffee shop, Grocery, Online shopping
+- [ ] Create Limits & Settings display
+- [ ] Show daily advance limit (5,000 Dhs) and monthly limit (8,000 Dhs)
+- [ ] Display current month usage (3,120 Dhs) and remaining (4,880 Dhs)
+
+## Fee Deduction Clarification
+- [x] Update Review screen message to clarify fee is deducted immediately
+- [x] Change text from "amount and service fee will be deducted from salary" to "amount will be deducted from salary, fee already deducted"
+- [x] Update transaction history to show fee as separate debit transaction (-60 Dhs)
+- [x] Show advance as credit (+2,000 Dhs) and fee as debit (-60 Dhs) separately
+- [x] Update Home screen to show latest 2 transactions (advance + fee)
+- [x] Color code: Green for credits (+), Red for debits (-)
+- [x] Add subtitle to each transaction (Meryem - ACME for advances, Transaction Fee for fees)
