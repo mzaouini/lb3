@@ -311,3 +311,8 @@
 - [x] Show "Total Received" as Requested Amount minus Service Fee (2,000 - 60 = 1,940 Dhs)
 - [x] Display service fee in red with minus sign (-60 Dhs)
 - [x] Change "Total Amount" to "Amount Received" for clarity
+
+## Transaction Month Filter
+- [x] Show only current month (October 2025) transactions
+- [x] Remove September 2025 section
+- [x] Update total to reflect only October: 3,500 Dhs

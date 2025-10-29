@@ -219,47 +219,6 @@ export default function Transactions() {
                 );
               })}
             </div>
-            
-            {/* September Transactions */}
-            <div className="space-y-4">
-              <div className="flex justify-between items-center">
-                <p className="text-teal font-semibold text-lg">September 2025</p>
-                <p className="text-sm font-semibold text-green-600">
-                  {formatCurrency(transactions.filter(tx => tx.month === 'September' && tx.type === 'credit').reduce((sum, tx) => sum + tx.amount, 0))}
-                </p>
-              </div>
-              {transactions.filter(tx => tx.month === 'September' && tx.type === 'credit').map((tx) => {
-                const fee = transactions.find(f => f.id === tx.id + 1 && f.type === 'debit');
-                return (
-                  <div key={tx.id}>
-                    <Card 
-                      className="p-4 cursor-pointer hover:shadow-md transition-shadow"
-                      onClick={() => setLocation("/app/transaction-details")}
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-10 h-10 rounded-full flex items-center justify-center bg-green-100">
-                            <span className="text-green-600">✓</span>
-                          </div>
-                          <div>
-                            <p className="font-semibold text-navy">{tx.title}</p>
-                            <p className="text-xs text-gray-600">{tx.subtitle}</p>
-                            <p className="text-xs text-gray-500">{tx.date}</p>
-                          </div>
-                        </div>
-                        <div className="text-right">
-                          <p className="font-bold text-green-600">+{formatCurrency(tx.amount)}</p>
-                          <p className="text-xs text-gray-500">Instant</p>
-                        </div>
-                      </div>
-                    </Card>
-                    {fee && (
-                      <p className="text-xs text-red-500 ml-16 mt-1">service fee: -{formatCurrency(Math.abs(fee.amount))}</p>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
           </div>
         ) : (
           <div className="text-center py-12 opacity-50">
