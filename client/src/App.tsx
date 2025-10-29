@@ -5,6 +5,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
+import Splash from "./pages/onboarding/Splash";
 import Welcome from "./pages/onboarding/Welcome";
 import PhoneEntry from "./pages/onboarding/PhoneEntry";
 import OTPVerification from "./pages/onboarding/OTPVerification";
@@ -27,9 +28,10 @@ function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
+      <Route path={"/"} component={Splash} />
       
       {/* Onboarding Routes */}
+      <Route path="/onboarding/splash" component={Splash} />
       <Route path="/onboarding/welcome" component={Welcome} />
       <Route path="/onboarding/phone" component={PhoneEntry} />
       <Route path="/onboarding/otp" component={OTPVerification} />

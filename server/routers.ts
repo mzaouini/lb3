@@ -25,7 +25,7 @@ export const appRouter = router({
     }),
     
     getAvailableBalance: protectedProcedure.query(async ({ ctx }) => {
-      return db.getUserAvailableBalance(ctx.user.id);
+      return db.getAvailableBalance(ctx.user.id);
     }),
     
     create: protectedProcedure

@@ -60,6 +60,18 @@
 - [x] Create tRPC procedures for card management
 - [x] Integrate MySQL database connection (via Drizzle ORM)
 
+## Bug Fixes
+- [x] Fix white screen - app should load onboarding flow like https://libertypaykyc.netlify.app/
+- [x] Connect to Supabase PostgreSQL database
+- [x] Update DATABASE_URL environment variable
+- [x] Migrate schema to Supabase
+- [x] Fix TypeScript error: getUserAvailableBalance should be getAvailableBalance in routers.ts
+- [x] Add missing createSalaryAdvance function to db.ts
+- [x] Add missing createTransaction function to db.ts
+- [x] Add missing createBankAccount function to db.ts
+- [x] Install @supabase/supabase-js package
+- [x] Update server/db.ts to use Supabase client instead of Drizzle ORM
+
 ## Testing & Documentation
 - [x] Test all screens and flows
 - [x] Create comprehensive README.md
@@ -69,3 +81,12 @@
 ## Deployment
 - [x] Push to GitHub repository (lb3)
 - [ ] Deploy to Netlify
+
+## Seed Data & Testing
+- [x] Create dummy user: Meryem Guezzour (DOB: 01/01/2000, CIN: AB100900)
+- [x] Set fixed OTP to 123456 for testing
+- [x] Add salary data: 8,000 Dhs net salary at Anfa Place
+- [x] Create bank account: XXXX 0401 (Attijariwafa Bank)
+- [x] Add sample transactions and salary advance history
+- [x] Set available balance to 4,000 Dhs (50% of salary)
+- [x] Create comprehensive testing guide (TESTING_GUIDE.md)

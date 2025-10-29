@@ -39,8 +39,18 @@ export default function OTPVerification() {
   const handleVerify = () => {
     const otpCode = otp.join("");
     if (otpCode.length === 6) {
-      sessionStorage.setItem("onboarding_otp", otpCode);
-      setLocation("/onboarding/create-pin");
+      // For testing: Accept fixed OTP 123456 or any 6-digit code
+      // In production, this should validate against server-sent OTP
+      const FIXED_OTP = "123456";
+      
+      if (otpCode === FIXED_OTP || process.env.NODE_ENV === "development") {
+        sessionStorage.setItem("onboarding_otp", otpCode);
+        setLocation("/onboarding/create-pin");
+      } else {
+        alert("Invalid OTP. For testing, use: 123456");
+        setOtp(["", "", "", "", "", ""]);
+        inputRefs.current[0]?.focus();
+      }
     }
   };
 
