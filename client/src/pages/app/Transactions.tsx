@@ -18,7 +18,7 @@ export default function Transactions() {
       title: 'Salary Advance',
       subtitle: 'Meryem - ACME',
       date: '29 Oct 2025 | 12:48 PM',
-      amount: 2000,
+      amount: 200000, // 2,000 Dhs in fils
       type: 'credit',
       status: 'completed',
       month: 'October'
@@ -28,7 +28,7 @@ export default function Transactions() {
       title: 'Service Fee',
       subtitle: 'Transaction Fee',
       date: '29 Oct 2025 | 12:48 PM',
-      amount: -60,
+      amount: -6000, // -60 Dhs in fils
       type: 'debit',
       status: 'completed',
       month: 'October'
@@ -39,7 +39,7 @@ export default function Transactions() {
       title: 'Salary Advance',
       subtitle: 'Meryem - ACME',
       date: '15 Oct 2025 | 09:30 AM',
-      amount: 1000,
+      amount: 100000, // 1,000 Dhs in fils
       type: 'credit',
       status: 'completed',
       month: 'October'
@@ -49,7 +49,7 @@ export default function Transactions() {
       title: 'Service Fee',
       subtitle: 'Transaction Fee',
       date: '15 Oct 2025 | 09:30 AM',
-      amount: -60,
+      amount: -6000, // -60 Dhs in fils
       type: 'debit',
       status: 'completed',
       month: 'October'
@@ -60,7 +60,7 @@ export default function Transactions() {
       title: 'Salary Advance',
       subtitle: 'Meryem - ACME',
       date: '08 Oct 2025 | 02:15 PM',
-      amount: 500,
+      amount: 50000, // 500 Dhs in fils
       type: 'credit',
       status: 'completed',
       month: 'October'
@@ -70,7 +70,7 @@ export default function Transactions() {
       title: 'Service Fee',
       subtitle: 'Transaction Fee',
       date: '08 Oct 2025 | 02:15 PM',
-      amount: -60,
+      amount: -6000, // -60 Dhs in fils
       type: 'debit',
       status: 'completed',
       month: 'October'
@@ -81,7 +81,7 @@ export default function Transactions() {
       title: 'Salary Advance',
       subtitle: 'Meryem - ACME',
       date: '25 Sep 2025 | 11:20 AM',
-      amount: 1500,
+      amount: 150000, // 1,500 Dhs in fils
       type: 'credit',
       status: 'completed',
       month: 'September'
@@ -91,7 +91,7 @@ export default function Transactions() {
       title: 'Service Fee',
       subtitle: 'Transaction Fee',
       date: '25 Sep 2025 | 11:20 AM',
-      amount: -60,
+      amount: -6000, // -60 Dhs in fils
       type: 'debit',
       status: 'completed',
       month: 'September'
@@ -102,7 +102,7 @@ export default function Transactions() {
       title: 'Salary Advance',
       subtitle: 'Meryem - ACME',
       date: '10 Sep 2025 | 04:45 PM',
-      amount: 2000,
+      amount: 200000, // 2,000 Dhs in fils
       type: 'credit',
       status: 'completed',
       month: 'September'
@@ -112,7 +112,7 @@ export default function Transactions() {
       title: 'Service Fee',
       subtitle: 'Transaction Fee',
       date: '10 Sep 2025 | 04:45 PM',
-      amount: -60,
+      amount: -6000, // -60 Dhs in fils
       type: 'debit',
       status: 'completed',
       month: 'September'

@@ -286,3 +286,9 @@
 - [ ] Add new transaction to history dynamically (advance + fee)
 - [ ] Ensure balance consistency across Home and Transaction screens
 - [ ] Fix screen colors throughout the flow for consistency
+
+## Transaction History Value Fix
+- [x] Fix transaction amounts - showing 20 Dhs instead of 2,000 Dhs (converted to centimes)
+- [x] Fix service fee - showing 0.6 Dhs instead of 60 Dhs (converted to centimes)
+- [x] Fix total calculation to match actual transaction values (now shows correct sum)
+- [x] Ensure consistency with Home screen transaction display
