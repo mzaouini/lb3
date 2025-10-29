@@ -8,7 +8,7 @@ export default function Cards() {
   const balance = 150000; // 1,500 Dhs (after 2000 in, 60 + 45 + 320 + 850 + 180 + 400 = 1855 out, but showing 1500 for demo)
 
   return (
-    <div className="mobile-container min-h-screen bg-gray-50 pb-24">
+    <div className="mobile-container min-h-screen bg-background pb-24">
       <div className="liberty-gradient text-white p-6 rounded-b-3xl">
         <button
           onClick={() => setLocation("/app/home")}
@@ -225,7 +225,7 @@ export default function Cards() {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-6 py-4">
+      <div className="fixed bottom-0 left-0 right-0 bg-card border-t border-border px-6 py-4">
         <div className="mobile-container flex justify-around items-center">
           <button onClick={() => setLocation("/app/home")} className="flex flex-col items-center space-y-1 text-gray-400">
             <Home className="w-8 h-8" />

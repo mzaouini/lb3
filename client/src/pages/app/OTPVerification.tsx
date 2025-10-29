@@ -53,7 +53,7 @@ export default function OTPVerification() {
   const isComplete = otp.every(digit => digit !== "");
 
   return (
-    <div className="mobile-container min-h-screen bg-gray-50">
+    <div className="mobile-container min-h-screen bg-background">
       {/* Header */}
       <div className="liberty-gradient text-white p-6 rounded-b-3xl">
         <button

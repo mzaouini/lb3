@@ -73,7 +73,7 @@ export default function Notifications() {
   };
 
   return (
-    <div className="mobile-container min-h-screen bg-gray-50 pb-24">
+    <div className="mobile-container min-h-screen bg-background pb-24">
       <div className="liberty-gradient text-white p-6 rounded-b-3xl">
         <div className="flex items-center justify-between">
           <button

@@ -37,7 +37,7 @@ export default function OfficialDetails() {
   };
 
   return (
-    <div className="mobile-container min-h-screen bg-gray-50 pb-24">
+    <div className="mobile-container min-h-screen bg-background pb-24">
       {/* Header */}
       <div className="liberty-gradient text-white p-6 rounded-b-3xl">
         <button

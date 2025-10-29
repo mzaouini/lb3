@@ -1,11 +1,23 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, CreditCard, History, Home, User as UserIcon, Bell, FileText, LogOut } from "lucide-react";
+import { ChevronLeft, CreditCard, History, Home, User as UserIcon, Bell, FileText, LogOut, Moon, Sun } from "lucide-react";
 import { useLocation } from "wouter";
+import { themeStore } from "@/_core/stores/themeStore";
+import { useState, useEffect } from "react";
 
 export default function Profile() {
   const [, setLocation] = useLocation();
   const userName = sessionStorage.getItem("userName") || "Meryem Guezzour";
+  const [theme, setTheme] = useState(themeStore.getTheme());
+
+  useEffect(() => {
+    const unsubscribe = themeStore.subscribe(setTheme);
+    return () => { unsubscribe(); };
+  }, []);
+
+  const toggleTheme = () => {
+    themeStore.toggleTheme();
+  };
   
   const logout = () => {
     sessionStorage.removeItem("isLoggedIn");
@@ -44,7 +56,7 @@ export default function Profile() {
   ];
 
   return (
-    <div className="mobile-container min-h-screen bg-gray-50 pb-24">
+    <div className="mobile-container min-h-screen bg-background pb-24">
       {/* Header */}
       <div className="liberty-gradient text-white p-6 rounded-b-3xl">
         <div className="flex items-center justify-between mb-4">
@@ -121,6 +133,30 @@ export default function Profile() {
           ))}
         </div>
 
+        {/* Theme Toggle */}
+        <Card className="p-4 cursor-pointer hover:shadow-md transition-shadow" onClick={toggleTheme}>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                {theme === 'dark' ? (
+                  <Sun className="w-6 h-6 text-yellow-500" />
+                ) : (
+                  <Moon className="w-6 h-6 text-navy" />
+                )}
+              </div>
+              <div>
+                <span className="font-semibold text-navy block">Appearance</span>
+                <span className="text-sm text-gray-600">{theme === 'dark' ? 'Dark Mode' : 'Light Mode'}</span>
+              </div>
+            </div>
+            <div className="flex items-center space-x-2">
+              <div className={`w-12 h-6 rounded-full transition-colors ${theme === 'dark' ? 'bg-teal' : 'bg-gray-300'} relative`}>
+                <div className={`absolute top-0.5 w-5 h-5 bg-white rounded-full transition-transform ${theme === 'dark' ? 'translate-x-6' : 'translate-x-0.5'}`} />
+              </div>
+            </div>
+          </div>
+        </Card>
+
         {/* Logout Button */}
         <div className="pt-4">
           <Button
@@ -134,7 +170,7 @@ export default function Profile() {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-6 py-4">
+      <div className="fixed bottom-0 left-0 right-0 bg-card border-t border-border px-6 py-4">
         <div className="mobile-container flex justify-around items-center">
           <button onClick={() => setLocation("/app/home")} className="flex flex-col items-center space-y-1 text-gray-400">
             <Home className="w-6 h-6" />

@@ -15,7 +15,7 @@ export default function SalaryBreakdown() {
   const remainingDays = daysInMonth - daysWorked;
 
   return (
-    <div className="mobile-container min-h-screen bg-gray-50">
+    <div className="mobile-container min-h-screen bg-background">
       {/* Header */}
       <div className="liberty-gradient text-white p-6 rounded-b-3xl">
         <div className="flex items-center justify-between mb-6">

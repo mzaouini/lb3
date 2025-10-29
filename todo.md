@@ -341,3 +341,25 @@
 - [x] Add subtle hover effect to card (lift -2px + enhanced shadow)
 - [x] Smooth transition (300ms) for interactive feel
 - [x] Maintain premium card aesthetic with cursor pointer
+
+## Night Mode (Manual Toggle)
+- [ ] Create theme context/store for dark/light mode state
+- [ ] Add toggle button in Profile screen
+- [ ] Save theme preference to localStorage
+- [ ] Lighten colors across all screens for better contrast in dark mode
+- [ ] Adjust text colors to ensure readability on dark backgrounds
+- [ ] Update card gradients to work well in both themes
+- [ ] Enhance button and CTA visibility in night mode
+- [ ] Add smooth transitions between themes
+- [ ] Test all screens for proper contrast ratios
+
+## Dark/Light Mode Toggle (User Requested)
+- [x] Create theme store with localStorage persistence
+- [x] Add theme toggle button in Profile screen
+- [x] Implement dark mode color palette with lighter colors for better contrast
+- [x] Update all screens to use semantic colors (bg-background, bg-card, etc.)
+- [x] Add smooth transitions between theme changes (0.3s ease)
+- [x] Update CSS variables for dark mode (lighter navy, brighter teal/mint)
+- [x] Replace hardcoded bg-gray-50 with bg-background across all app screens
+- [x] Replace hardcoded bg-white borders with bg-card border-border for navigation bars
+- [x] Test dark mode on all screens (Home, Cards, Transactions, Profile, etc.)

@@ -85,43 +85,50 @@
 }
 
 .dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
+  /* Liberty Pay Dark Mode - Lighter colors for better contrast */
+  --liberty-navy: 40 60 180; /* Lighter navy for dark mode */
+  --liberty-teal: 94 220 181; /* Brighter teal */
+  --liberty-mint: 150 240 210; /* Lighter mint */
+  --liberty-gold: 240 170 130; /* Lighter gold */
+  
+  --primary: rgb(40, 60, 180); /* Lighter navy */
+  --primary-foreground: rgb(255, 255, 255);
   --sidebar-primary: var(--color-blue-500);
   --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
+  --background: oklch(0.18 0.01 260); /* Darker background with slight blue tint */
+  --foreground: oklch(0.95 0.005 65); /* Very light foreground */
+  --card: oklch(0.24 0.015 260); /* Lighter cards with blue tint */
+  --card-foreground: oklch(0.95 0.005 65); /* Very light text */
+  --popover: oklch(0.24 0.015 260);
+  --popover-foreground: oklch(0.95 0.005 65);
+  --secondary: oklch(0.30 0.015 260);
+  --secondary-foreground: oklch(0.90 0.005 65);
+  --muted: oklch(0.32 0.015 260);
+  --muted-foreground: oklch(0.75 0.015 260);
+  --accent: rgb(94, 220, 181); /* Bright teal for dark mode */
+  --accent-foreground: rgb(26, 35, 126); /* Navy text on teal */
+  --destructive: oklch(0.75 0.20 25);
   --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
+  --border: oklch(1 0 0 / 15%);
+  --input: oklch(1 0 0 / 20%);
+  --ring: oklch(0.60 0.20 260);
   --chart-1: var(--color-blue-300);
   --chart-2: var(--color-blue-500);
   --chart-3: var(--color-blue-600);
   --chart-4: var(--color-blue-700);
   --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --sidebar: oklch(0.24 0.015 260);
+  --sidebar-foreground: oklch(0.95 0.005 65);
+  --sidebar-accent: oklch(0.32 0.015 260);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 15%);
+  --sidebar-ring: oklch(0.60 0.20 260);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
   body {
     @apply bg-background text-foreground;

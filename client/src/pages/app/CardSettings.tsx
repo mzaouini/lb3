@@ -12,7 +12,7 @@ export default function CardSettings() {
   const [nfcPayments, setNfcPayments] = useState(true);
 
   return (
-    <div className="mobile-container min-h-screen bg-gray-50">
+    <div className="mobile-container min-h-screen bg-background">
       {/* Header */}
       <div className="bg-white border-b border-gray-200 p-4">
         <div className="flex items-center gap-4">
@@ -101,7 +101,7 @@ export default function CardSettings() {
             // Navigate to card benefits page
             alert("Card Benefits feature coming soon!");
           }}
-          className="w-full bg-white rounded-xl p-4 shadow-sm border border-gray-200 flex items-center justify-between hover:bg-gray-50 transition-colors"
+          className="w-full bg-white rounded-xl p-4 shadow-sm border border-gray-200 flex items-center justify-between hover:bg-background transition-colors"
         >
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">

@@ -29,7 +29,7 @@ export default function AppHome() {
   const userName = "Meryem";
 
   return (
-    <div className="mobile-container min-h-screen bg-gray-50">
+    <div className="mobile-container min-h-screen bg-background">
       {/* Header with gradient */}
       <div className="liberty-gradient text-white p-8 pb-32 rounded-b-3xl">
         <div className="flex justify-between items-center mb-8">
@@ -142,7 +142,7 @@ export default function AppHome() {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 px-6 py-4">
+      <div className="fixed bottom-0 left-0 right-0 bg-card border-t border-border px-6 py-4">
         <div className="mobile-container flex justify-around items-center">
           <button
             onClick={() => setLocation("/app/home")}
