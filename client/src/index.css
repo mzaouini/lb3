@@ -43,8 +43,14 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
+  /* Liberty Pay Color Scheme */
+  --liberty-navy: 26 35 126;
+  --liberty-teal: 0 196 140;
+  --liberty-mint: 94 220 181;
+  --liberty-gold: 220 139 94;
+  
+  --primary: rgb(26, 35, 126); /* Navy Blue */
+  --primary-foreground: rgb(255, 255, 255);
   --sidebar-primary: var(--color-blue-600);
   --sidebar-primary-foreground: var(--color-blue-50);
   --chart-1: var(--color-blue-300);
@@ -63,8 +69,8 @@
   --secondary-foreground: oklch(0.4 0.015 65);
   --muted: oklch(0.967 0.001 286.375);
   --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
+  --accent: rgb(0, 196, 140); /* Teal */
+  --accent-foreground: rgb(255, 255, 255);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(0.92 0.004 286.32);
@@ -133,6 +139,12 @@
   }
 }
 
+@layer base {
+  body {
+    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
 @layer components {
   /**
    * Custom container utility that centers content and adds responsive padding.
@@ -174,4 +186,90 @@
       max-width: 1280px; /* Standard content width */
     }
   }
+  
+  /* Mobile-first responsive container for Liberty Pay */
+  .mobile-container {
+    @apply max-w-md mx-auto min-h-screen;
+  }
+  
+  /* Liberty Pay gradient background */
+  .liberty-gradient {
+    background: linear-gradient(135deg, rgb(26, 35, 126) 0%, rgb(0, 196, 140) 100%);
+  }
+  
+  /* Liberty Pay button styles */
+  .liberty-button {
+    @apply bg-[rgb(94,220,181)] text-[rgb(26,35,126)] font-semibold rounded-lg px-6 py-3 hover:opacity-90 transition-opacity;
+  }
+  
+  /* Card with Liberty Pay styling */
+  .liberty-card {
+    @apply bg-white rounded-2xl shadow-lg p-6 border border-gray-100;
+  }
+}
+
+@layer utilities {
+  /* Custom utilities for Liberty Pay */
+  .text-navy {
+    color: rgb(26, 35, 126);
+  }
+  
+  .text-teal {
+    color: rgb(0, 196, 140);
+  }
+  
+  .text-mint {
+    color: rgb(94, 220, 181);
+  }
+  
+  .text-gold {
+    color: rgb(220, 139, 94);
+  }
+  
+  .bg-navy {
+    background-color: rgb(26, 35, 126);
+  }
+  
+  .bg-teal {
+    background-color: rgb(0, 196, 140);
+  }
+  
+  .bg-mint {
+    background-color: rgb(94, 220, 181);
+  }
+  
+  .bg-gold {
+    background-color: rgb(220, 139, 94);
+  }
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out;
 }

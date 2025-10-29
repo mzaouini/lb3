@@ -1,6 +1,17 @@
-import { eq } from "drizzle-orm";
+import { eq, desc, and, gte, lte } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { 
+  InsertUser, 
+  users, 
+  bankAccounts,
+  salaryAdvances,
+  transactions,
+  cards,
+  cardTransactions,
+  InsertBankAccount,
+  InsertSalaryAdvance,
+  InsertTransaction
+} from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -89,4 +100,102 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+// Bank Accounts
+export async function getUserBankAccounts(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  
+  return db.select().from(bankAccounts).where(eq(bankAccounts.userId, userId));
+}
+
+export async function createBankAccount(account: InsertBankAccount) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  await db.insert(bankAccounts).values(account);
+}
+
+// Salary Advances
+export async function getUserSalaryAdvances(userId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  
+  return db.select().from(salaryAdvances)
+    .where(eq(salaryAdvances.userId, userId))
+    .orderBy(desc(salaryAdvances.requestedAt));
+}
+
+export async function createSalaryAdvance(advance: InsertSalaryAdvance) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  const result = await db.insert(salaryAdvances).values(advance);
+  return result;
+}
+
+export async function getUserAvailableBalance(userId: number): Promise<number> {
+  const db = await getDb();
+  if (!db) return 0;
+  
+  // Get user's net salary
+  const user = await db.select().from(users).where(eq(users.id, userId)).limit(1);
+  if (!user.length) return 0;
+  
+  const netSalary = user[0].netSalary || 0;
+  
+  // Get total outstanding advances
+  const advances = await db.select().from(salaryAdvances)
+    .where(and(
+      eq(salaryAdvances.userId, userId),
+      eq(salaryAdvances.status, "pending")
+    ));
+  
+  const totalAdvances = advances.reduce((sum, adv) => sum + adv.amount, 0);
+  
+  return Math.max(0, netSalary - totalAdvances);
+}
+
+// Transactions
+export async function getUserTransactions(userId: number, startDate?: Date, endDate?: Date) {
+  const db = await getDb();
+  if (!db) return [];
+  
+  if (startDate && endDate) {
+    return db.select().from(transactions)
+      .where(and(
+        eq(transactions.userId, userId),
+        gte(transactions.createdAt, startDate),
+        lte(transactions.createdAt, endDate)
+      ))
+      .orderBy(desc(transactions.createdAt));
+  }
+  
+  return db.select().from(transactions)
+    .where(eq(transactions.userId, userId))
+    .orderBy(desc(transactions.createdAt));
+}
+
+export async function createTransaction(transaction: InsertTransaction) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  await db.insert(transactions).values(transaction);
+}
+
+// Cards
+export async function getUserCard(userId: number) {
+  const db = await getDb();
+  if (!db) return null;
+  
+  const result = await db.select().from(cards).where(eq(cards.userId, userId)).limit(1);
+  return result.length > 0 ? result[0] : null;
+}
+
+export async function getCardTransactions(cardId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  
+  return db.select().from(cardTransactions)
+    .where(eq(cardTransactions.cardId, cardId))
+    .orderBy(desc(cardTransactions.createdAt));
+}
