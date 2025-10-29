@@ -21,16 +21,16 @@ export default function Cards() {
 
       <div className="px-6 -mt-16 space-y-6">
         {/* Prepaid Card with Decorative Pattern */}
-        <Card className="relative bg-[#2d1b4e] text-white p-8 shadow-2xl overflow-hidden">
-          {/* Decorative teal pattern on right side */}
-          <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-30">
+        <Card className="relative bg-gradient-to-br from-[#00d4aa] to-[#00a896] text-white p-8 shadow-2xl overflow-hidden">
+          {/* Decorative pattern on right side */}
+          <div className="absolute right-0 top-0 bottom-0 w-1/2 opacity-20">
             <svg viewBox="0 0 200 300" className="h-full w-full">
               <path d="M 100 50 Q 150 80, 180 120 Q 200 150, 180 180 Q 150 220, 120 240" 
-                    stroke="#00d4aa" strokeWidth="8" fill="none" strokeLinecap="round"/>
+                    stroke="#ffffff" strokeWidth="8" fill="none" strokeLinecap="round"/>
               <path d="M 120 40 Q 160 70, 190 110 Q 210 140, 190 170 Q 160 210, 130 230" 
-                    stroke="#00d4aa" strokeWidth="8" fill="none" strokeLinecap="round"/>
+                    stroke="#ffffff" strokeWidth="8" fill="none" strokeLinecap="round"/>
               <path d="M 80 60 Q 130 90, 160 130 Q 180 160, 160 190 Q 130 230, 100 250" 
-                    stroke="#00d4aa" strokeWidth="8" fill="none" strokeLinecap="round"/>
+                    stroke="#ffffff" strokeWidth="8" fill="none" strokeLinecap="round"/>
             </svg>
           </div>
 

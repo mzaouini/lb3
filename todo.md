@@ -331,3 +331,8 @@
 - [x] Update Total EWA in Transactions tab
 - [x] Use sessionStorage to persist changes during app session only
 - [x] Reset balance and transactions on login (fresh session)
+
+## Card Design Update
+- [x] Change card background from navy/purple to mint/teal gradient (#00d4aa to #00a896)
+- [x] Match the green gradient shown in reference image
+- [x] Ensure text remains readable on new background (white decorative pattern)
