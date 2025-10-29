@@ -90,3 +90,19 @@
 - [x] Add sample transactions and salary advance history
 - [x] Set available balance to 4,000 Dhs (50% of salary)
 - [x] Create comprehensive testing guide (TESTING_GUIDE.md)
+
+## New Feature Requests (User Requested)
+- [x] Add CIN Front scanning screen to onboarding
+- [x] Add CIN Back scanning screen to onboarding
+- [x] Add simulated liveness check screen with camera
+- [x] Add "Under Process" confirmation flow after KYC submission
+- [x] Change fee structure from 2% commission to fixed 60 Dhs
+- [x] Update fee calculation in Enter Amount screen
+- [x] Update fee display in Review screen
+- [x] Show fixed fee in transaction history
+- [x] Add receipt generation option for transactions
+- [x] Add receipt download/share functionality
+- [x] Update seed data to reflect fixed 60 Dhs fee
+- [x] Update onboarding flow routing (Personal Details → ID Scan → Liveness → Complete)
+- [x] Add transaction reference number generation
+- [x] Add fee breakdown display in Success screen

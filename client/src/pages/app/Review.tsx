@@ -7,7 +7,7 @@ import { formatCurrency } from "@shared/currency";
 export default function Review() {
   const [, setLocation] = useLocation();
   const amountInFils = parseInt(sessionStorage.getItem("advance_amount") || "15000");
-  const serviceFee = 4000; // 40 Dhs
+  const serviceFee = 6000; // 60 Dhs fixed fee
   const totalAmount = amountInFils + serviceFee;
 
   const handleConfirm = () => {

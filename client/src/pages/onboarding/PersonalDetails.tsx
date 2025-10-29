@@ -21,7 +21,7 @@ export default function PersonalDetails() {
 
   const handleContinue = () => {
     sessionStorage.setItem("onboarding_details", JSON.stringify(formData));
-    setLocation("/app/home");
+    setLocation("/onboarding/scan-id-front");
   };
 
   const isFormValid = formData.fullName && formData.nationalId && formData.email && formData.company && formData.netSalary;
@@ -116,7 +116,7 @@ export default function PersonalDetails() {
           disabled={!isFormValid}
           className="w-full liberty-button text-lg py-6 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Complete Registration
+          Continue to Verification
         </Button>
       </div>
     </div>

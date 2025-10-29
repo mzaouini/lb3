@@ -12,6 +12,10 @@ import OTPVerification from "./pages/onboarding/OTPVerification";
 import CreatePIN from "./pages/onboarding/CreatePIN";
 import ConfirmPIN from "./pages/onboarding/ConfirmPIN";
 import PersonalDetails from "./pages/onboarding/PersonalDetails";
+import ScanIDFront from "./pages/onboarding/ScanIDFront";
+import ScanIDBack from "./pages/onboarding/ScanIDBack";
+import LivenessCheck from "./pages/onboarding/LivenessCheck";
+import VerificationComplete from "./pages/onboarding/VerificationComplete";
 import AppHome from "./pages/app/Home";
 import Yalla from "./pages/app/Yalla";
 import EnterAmount from "./pages/app/EnterAmount";
@@ -38,6 +42,10 @@ function Router() {
       <Route path="/onboarding/create-pin" component={CreatePIN} />
       <Route path="/onboarding/confirm-pin" component={ConfirmPIN} />
       <Route path="/onboarding/personal-details" component={PersonalDetails} />
+      <Route path="/onboarding/scan-id-front" component={ScanIDFront} />
+      <Route path="/onboarding/scan-id-back" component={ScanIDBack} />
+      <Route path="/onboarding/liveness-check" component={LivenessCheck} />
+      <Route path="/onboarding/verification-complete" component={VerificationComplete} />
       
       {/* App Routes */}
       <Route path="/app/home" component={AppHome} />
