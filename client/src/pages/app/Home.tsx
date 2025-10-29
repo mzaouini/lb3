@@ -9,7 +9,11 @@ export default function AppHome() {
   const [, setLocation] = useLocation();
   
   // Mock data - will be replaced with real data from tRPC
-  const availableBalance = 400000; // 4,000 Dhs in fils (50% of 8,000 Dhs salary)
+  const baseSalary = 1000000; // 10,000 Dhs in fils
+  const daysWorked = 14;
+  const daysInMonth = 30;
+  const earnedSalary = Math.floor((baseSalary * daysWorked) / daysInMonth); // ~4,667 Dhs
+  const availableBalance = Math.floor(earnedSalary * 0.5); // 50% of earned = ~2,333 Dhs
   const userName = "Meryem";
 
   return (

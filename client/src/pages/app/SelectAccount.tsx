@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { ChevronLeft, Search } from "lucide-react";
 import { useState } from "react";
 import { useLocation } from "wouter";
-import { formatCurrency, parseCurrencyToFils } from "@shared/currency";
+import { formatCurrency } from "@shared/currency";
 
 export default function SelectAccount() {
   const [, setLocation] = useLocation();
@@ -15,10 +15,11 @@ export default function SelectAccount() {
   const accounts = [
     {
       id: 1,
-      title: "DOrg FName53 DOrg LName53",
-      accountNumber: "7678232423445532242342424",
-      bankName: "Bank Muscat",
-    },
+      title: "Meryem Guezzour",
+      accountNumber: "XXXX XXXX XXXX 0401",
+      iban: "MA64011519000001205000000141",
+      bankName: "LibertyPay Nasp account"
+    }
   ];
 
   const handleSelectAccount = (accountId: number) => {

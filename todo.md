@@ -118,3 +118,15 @@
 - [x] Update transaction to show completed/instant status instead of pending
 - [x] Update available balance to 4,000 Dhs (50% of 8,000 Dhs salary)
 - [x] Update transaction amount to 2,060 Dhs (2,000 + 60 fee)
+
+## New Requirements (User Requested)
+- [x] Update Home/Welcome page design to match https://libertypaykyc2.netlify.app/
+- [x] Add Liberty Pay logo with orange stacked icon
+- [x] Update welcome message and tagline
+- [x] Update bank account details to LibertyPay Nasp account (XXXX XXXX XXXX 0401)
+- [x] Update IBAN to MA64011519000001205000000141
+- [x] Implement dynamic balance calculation based on days worked
+- [x] Set base salary to 10,000 Dhs in seed data
+- [x] Calculate available EWA as 50% of earned salary (14 days worked = 2,333 Dhs available)
+- [x] Update company name to ACME in seed data
+- [x] Update SelectAccount screen with new bank details
