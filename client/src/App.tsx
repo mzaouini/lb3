@@ -16,6 +16,7 @@ import ScanIDFront from "./pages/onboarding/ScanIDFront";
 import ScanIDBack from "./pages/onboarding/ScanIDBack";
 import LivenessCheck from "./pages/onboarding/LivenessCheck";
 import VerificationComplete from "./pages/onboarding/VerificationComplete";
+import Login from "./pages/onboarding/Login";
 import AppHome from "./pages/app/Home";
 import Yalla from "./pages/app/Yalla";
 import EnterAmount from "./pages/app/EnterAmount";
@@ -27,6 +28,7 @@ import Profile from "./pages/app/Profile";
 import BankAccounts from "./pages/app/BankAccounts";
 import Cards from "./pages/app/Cards";
 import CardSettings from "./pages/app/CardSettings";
+import SalaryBreakdown from "./pages/app/SalaryBreakdown";
 import OfficialDetails from "./pages/app/OfficialDetails";
 
 function Router() {
@@ -47,6 +49,7 @@ function Router() {
       <Route path="/onboarding/scan-id-back" component={ScanIDBack} />
       <Route path="/onboarding/liveness-check" component={LivenessCheck} />
       <Route path="/onboarding/verification-complete" component={VerificationComplete} />
+      <Route path="/onboarding/login" component={Login} />
       
       {/* App Routes */}
       <Route path="/app/home" component={AppHome} />
@@ -60,6 +63,7 @@ function Router() {
       <Route path="/app/bank-accounts" component={BankAccounts} />
       <Route path="/app/cards" component={Cards} />
       <Route path="/app/card-settings" component={CardSettings} />
+      <Route path="/app/salary-breakdown" component={SalaryBreakdown} />
       <Route path="/app/official-details" component={OfficialDetails} />
       
       <Route path={"/404"} component={NotFound} />

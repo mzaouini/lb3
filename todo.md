@@ -186,3 +186,18 @@
 - [x] Update Cards screen Settings button to navigate to CardSettings
 - [x] Show transaction status as "Instant" with green checkmark for completed transactions
 - [x] Calculate total transaction amount dynamically (3,120 Dhs total)
+
+## Demo Enhancement Features
+- [x] Create Login screen with phone + PIN authentication (Phone: +212 612345678, PIN: 1234)
+- [x] Redirect to Login after onboarding completion
+- [x] Show "Welcome Back" message on Login screen
+- [x] Create Salary Breakdown screen as NEW BETA FEATURE (not in original Abhi app)
+- [x] Show days worked (14/30) and earned salary calculation
+- [x] Display available advance amount (50% of earned = 2,333.33 Dhs)
+- [x] Add next payday countdown (Nov 30, in 16 days)
+- [x] Add visual progress bar for earned vs. total salary
+- [x] Add BETA badge to Salary Breakdown feature
+- [x] Add "View salary breakdown" link on Home screen
+- [x] Show daily rate calculation (333.33 Dhs/day)
+- [x] Add "How Earned Wage Access Works" educational section
+- [x] Display employer info (ACME) in Salary Breakdown

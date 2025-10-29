@@ -49,10 +49,25 @@ export default function AppHome() {
           </div>
 
           <div className="space-y-2">
-            <p className="text-sm text-gray-600">Available Balance</p>
+            <div className="flex items-center justify-between">
+              <p className="text-sm text-gray-600">Available Balance</p>
+              <button
+                onClick={() => setLocation("/app/salary-breakdown")}
+                className="bg-mint text-navy px-2 py-1 rounded-full text-xs font-bold hover:bg-mint/80 transition-colors"
+              >
+                BETA
+              </button>
+            </div>
             <p className="text-4xl font-bold text-navy">
               {formatCurrency(availableBalance)}
             </p>
+            <button
+              onClick={() => setLocation("/app/salary-breakdown")}
+              className="text-xs text-teal hover:underline flex items-center space-x-1"
+            >
+              <span>View salary breakdown</span>
+              <ArrowRight className="w-3 h-3" />
+            </button>
           </div>
 
           <Button

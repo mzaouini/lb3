@@ -8,8 +8,8 @@ export default function VerificationComplete() {
   const handleContinue = () => {
     // Mark onboarding as complete
     sessionStorage.setItem("onboarding_complete", "true");
-    // Redirect to home/dashboard
-    setLocation("/app/home");
+    // Redirect to login screen
+    setLocation("/onboarding/login");
   };
 
   return (
