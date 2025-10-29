@@ -14,9 +14,9 @@ export default function ProcessingTransaction() {
   }, [setLocation]);
 
   return (
-    <div className="min-h-screen bg-background flex flex-col items-center justify-center px-6">
+    <div className="min-h-screen bg-navy flex flex-col items-center justify-center px-6">
       {/* Processing Message */}
-      <h1 className="text-2xl font-semibold text-foreground text-center mb-12">
+      <h1 className="text-2xl font-semibold text-white text-center mb-12">
         Money is being sent to your account
       </h1>
 
@@ -87,10 +87,10 @@ export default function ProcessingTransaction() {
 
       {/* Account Info */}
       <div className="mt-12 text-center">
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-white opacity-75">
           LibertyPay Naps Account
         </p>
-        <p className="text-xs text-muted-foreground mt-1">
+        <p className="text-xs text-white opacity-60 mt-1">
           XXXX XXXX XXXX 0401
         </p>
       </div>
