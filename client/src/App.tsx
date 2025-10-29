@@ -35,6 +35,7 @@ import Notifications from "./pages/app/Notifications";
 import EmployerInfo from "./pages/app/EmployerInfo";
 import Limits from "./pages/app/Limits";
 import AppOTPVerification from "./pages/app/OTPVerification";
+import ProcessingTransaction from "./pages/app/ProcessingTransaction";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -63,6 +64,7 @@ function Router() {
       <Route path="/app/select-account" component={SelectAccount} />
       <Route path="/app/otp-verification" component={AppOTPVerification} />
       <Route path="/app/review" component={Review} />
+      <Route path="/app/processing" component={ProcessingTransaction} />
       <Route path="/app/success" component={Success} />
       <Route path="/app/transactions" component={Transactions} />
       <Route path="/app/profile" component={Profile} />

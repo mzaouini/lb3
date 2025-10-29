@@ -46,7 +46,7 @@ export default function OTPVerification() {
       
       // Store that advance was completed
       sessionStorage.setItem("advance_completed", "true");
-      setLocation("/app/success");
+      setLocation("/app/processing");
     }
   };
 

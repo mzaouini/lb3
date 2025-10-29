@@ -363,3 +363,9 @@
 - [x] Replace hardcoded bg-gray-50 with bg-background across all app screens
 - [x] Replace hardcoded bg-white borders with bg-card border-border for navigation bars
 - [x] Test dark mode on all screens (Home, Cards, Transactions, Profile, etc.)
+
+## Loading Animation Enhancement
+- [x] Add loading/processing screen between OTP verification and success screen
+- [x] Show "Money is being sent to your account" message
+- [x] Add animated money stack icon with pulse/bounce effect
+- [x] Display 2-3 second loading animation before showing success
