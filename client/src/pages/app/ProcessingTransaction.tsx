@@ -33,29 +33,46 @@ export default function ProcessingTransaction() {
           </div>
         </div>
 
-        {/* Animated Money Stack */}
+        {/* Animated Money Stack - USD Bills */}
         <div className="relative animate-bounce-slow">
           {/* Money Stack - 3D Effect */}
           <div className="relative">
             {/* Stack Layer 3 (Back) */}
-            <div className="absolute top-2 left-2 w-32 h-20 bg-gradient-to-br from-gray-400 to-gray-500 rounded-lg opacity-60"></div>
+            <div className="absolute top-2 left-2 w-40 h-24 bg-gradient-to-br from-green-600 to-green-700 rounded-sm opacity-60"></div>
             
             {/* Stack Layer 2 (Middle) */}
-            <div className="absolute top-1 left-1 w-32 h-20 bg-gradient-to-br from-gray-500 to-gray-600 rounded-lg opacity-80 flex items-center justify-center">
-              {/* Money Band */}
-              <div className="absolute w-full h-6 bg-[#00c48c] opacity-70"></div>
+            <div className="absolute top-1 left-1 w-40 h-24 bg-gradient-to-br from-green-700 to-green-800 rounded-sm opacity-80 flex items-center justify-center">
+              {/* Dollar Bill Pattern */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-green-300 text-4xl font-bold opacity-30">$</div>
+              </div>
             </div>
             
-            {/* Stack Layer 1 (Front) */}
-            <div className="relative w-32 h-20 bg-gradient-to-br from-gray-600 to-gray-700 rounded-lg shadow-2xl flex items-center justify-center">
-              {/* Money Band */}
-              <div className="absolute w-full h-6 bg-[#00c48c]"></div>
-              
-              {/* Money Details */}
-              <div className="relative z-10 text-white text-center">
-                <div className="text-xs font-bold mb-1">💵</div>
-                <div className="text-[10px] font-semibold">Dhs</div>
+            {/* Stack Layer 1 (Front - Main USD Bill) */}
+            <div className="relative w-40 h-24 bg-gradient-to-br from-green-600 to-green-700 rounded-sm shadow-2xl border-2 border-green-800">
+              {/* USD Bill Design */}
+              <div className="absolute inset-0 p-2 flex flex-col justify-between">
+                {/* Top Section */}
+                <div className="flex justify-between items-start">
+                  <div className="text-green-200 text-xs font-bold">USA</div>
+                  <div className="text-green-100 text-2xl font-bold">$</div>
+                  <div className="text-green-200 text-xs font-bold">100</div>
+                </div>
+                
+                {/* Center - Large Dollar Sign */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-green-900 text-5xl font-bold opacity-20">$</div>
+                </div>
+                
+                {/* Bottom Section */}
+                <div className="flex justify-between items-end">
+                  <div className="text-green-200 text-[10px] font-semibold">ONE HUNDRED</div>
+                  <div className="text-green-100 text-lg font-bold">100</div>
+                </div>
               </div>
+              
+              {/* Decorative Border Pattern */}
+              <div className="absolute inset-0 border-4 border-green-400 opacity-10 rounded-sm"></div>
             </div>
           </div>
         </div>
