@@ -5,7 +5,7 @@ import { formatCurrency } from "@shared/currency";
 
 export default function Cards() {
   const [, setLocation] = useLocation();
-  const balance = 1685000; // 16,850 Dhs
+  const balance = 233333; // 2,333.33 Dhs (50% of earned salary for 14 days)
 
   return (
     <div className="mobile-container min-h-screen bg-gray-50 pb-24">
@@ -20,8 +20,8 @@ export default function Cards() {
       </div>
 
       <div className="px-6 -mt-16 space-y-6">
-        {/* MasterCard */}
-        <Card className="bg-gradient-to-br from-purple-600 to-purple-800 text-white p-8 shadow-2xl">
+        {/* Prepaid Card with Navy to Orange Gradient */}
+        <Card className="bg-gradient-to-br from-[#1a237e] via-[#283593] to-[#ff6f00] text-white p-8 shadow-2xl">
           <div className="flex justify-between items-start mb-12">
             <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
               <span className="text-2xl font-bold">LP</span>
@@ -38,12 +38,12 @@ export default function Cards() {
           <div className="space-y-4">
             <div>
               <p className="text-xs opacity-75 mb-1">Card Number</p>
-              <p className="text-xl font-mono tracking-wider">**** **** **** 4242</p>
+              <p className="text-xl font-mono tracking-wider">**** **** **** 1983</p>
             </div>
             <div className="flex justify-between">
               <div>
                 <p className="text-xs opacity-75 mb-1">Card Holder</p>
-                <p className="font-semibold">DEMO TESTING</p>
+                <p className="font-semibold">Meryem Guezzour</p>
               </div>
               <div>
                 <p className="text-xs opacity-75 mb-1">Expires</p>

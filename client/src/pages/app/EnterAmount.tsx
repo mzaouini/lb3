@@ -53,6 +53,31 @@ export default function EnterAmount() {
           </div>
           <div className="h-1 bg-white/20 mx-auto" style={{ width: Math.max(100, amount.length * 40) }}></div>
         </div>
+
+        {/* Quick Amount Buttons */}
+        <div className="grid grid-cols-3 gap-3 px-4">
+          <button
+            onClick={() => setAmount("500")}
+            className="bg-white/10 hover:bg-white/20 border border-white/30 rounded-lg py-4 px-3 transition-colors"
+          >
+            <div className="text-lg font-bold">500</div>
+            <div className="text-xs opacity-75">Dhs</div>
+          </button>
+          <button
+            onClick={() => setAmount("1000")}
+            className="bg-white/10 hover:bg-white/20 border border-white/30 rounded-lg py-4 px-3 transition-colors"
+          >
+            <div className="text-lg font-bold">1,000</div>
+            <div className="text-xs opacity-75">Dhs</div>
+          </button>
+          <button
+            onClick={() => setAmount("2000")}
+            className="bg-white/10 hover:bg-white/20 border border-white/30 rounded-lg py-4 px-3 transition-colors"
+          >
+            <div className="text-lg font-bold">2,000</div>
+            <div className="text-xs opacity-75">Dhs</div>
+          </button>
+        </div>
       </div>
 
       {/* Number Pad */}

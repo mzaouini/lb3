@@ -135,3 +135,11 @@
 - [x] Update account title from "DOrg FName53 DOrg LName53" to "Meryem Guezzour"
 - [x] Update account number from "7678232423445532242342424" to "XXXX XXXX XXXX 0401"
 - [x] Update bank name from "Bank Muscat" to "LibertyPay Nasp account"
+
+## Quick Amount Selection & Card Screen Updates
+- [x] Add quick amount buttons (500 Dhs, 1000 Dhs, 2000 Dhs) to Enter Amount screen
+- [x] Update Cards screen to show gradient card design (navy to orange)
+- [x] Display card balance on Cards screen (2,333.33 Dhs)
+- [x] Show masked card number on card display (**** **** **** 1983)
+- [x] Update card design to match reference (prepaid card style)
+- [x] Update card holder name to Meryem Guezzour
