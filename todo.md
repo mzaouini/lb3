@@ -153,3 +153,9 @@
 - [x] Update cardholder name to MERYEM GUEZZOUR
 - [x] Keep Mastercard logo (red/orange circles)
 - [x] Use dark purple background (#2d1b4e) matching reference
+
+## Netlify Deployment Fix
+- [x] Create netlify.toml configuration file
+- [x] Add _redirects file for client-side routing (public/_redirects)
+- [x] Document required environment variables
+- [x] Create deployment guide with build settings (NETLIFY_DEPLOYMENT.md)
