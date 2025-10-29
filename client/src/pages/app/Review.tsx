@@ -46,17 +46,17 @@ export default function Review() {
 
           <div className="flex justify-between py-3 border-b border-white/20">
             <span className="opacity-75">To Account Title</span>
-            <span className="font-semibold text-right">DOrg FName53 DOrg LName53</span>
+            <span className="font-semibold text-right">Meryem Guezzour</span>
           </div>
 
           <div className="flex justify-between py-3 border-b border-white/20">
             <span className="opacity-75">To Account Number</span>
-            <span className="font-semibold">7678232423445532242342424</span>
+            <span className="font-semibold">XXXX XXXX XXXX 0401</span>
           </div>
 
           <div className="flex justify-between py-3 border-b border-white/20">
             <span className="opacity-75">Bank Name</span>
-            <span className="font-semibold">Bank Muscat</span>
+            <span className="font-semibold">LibertyPay Nasp account</span>
           </div>
         </div>
 

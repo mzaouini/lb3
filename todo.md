@@ -130,3 +130,8 @@
 - [x] Calculate available EWA as 50% of earned salary (14 days worked = 2,333 Dhs available)
 - [x] Update company name to ACME in seed data
 - [x] Update SelectAccount screen with new bank details
+
+## Review Screen Updates
+- [x] Update account title from "DOrg FName53 DOrg LName53" to "Meryem Guezzour"
+- [x] Update account number from "7678232423445532242342424" to "XXXX XXXX XXXX 0401"
+- [x] Update bank name from "Bank Muscat" to "LibertyPay Nasp account"
