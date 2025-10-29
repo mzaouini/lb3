@@ -201,3 +201,8 @@
 - [x] Show daily rate calculation (333.33 Dhs/day)
 - [x] Add "How Earned Wage Access Works" educational section
 - [x] Display employer info (ACME) in Salary Breakdown
+
+## Vercel Deployment Fix
+- [x] Fix vercel.json output directory to dist/public
+- [x] Update routes configuration for proper SPA routing
+- [x] Set framework to "vite" for proper detection
