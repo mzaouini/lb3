@@ -159,3 +159,16 @@
 - [x] Add _redirects file for client-side routing (public/_redirects)
 - [x] Document required environment variables
 - [x] Create deployment guide with build settings (NETLIFY_DEPLOYMENT.md)
+
+## Branding & Deployment
+- [ ] Remove "Made with Manus" branding from footer/UI
+- [ ] Document that this is a full-stack app requiring server deployment
+- [ ] Note: Netlify (static hosting) won't work without backend migration
+
+## Vercel Deployment Configuration
+- [x] Create vercel.json configuration file
+- [x] Add Vercel deployment guide (VERCEL_DEPLOYMENT.md)
+- [x] Document environment variables for Vercel
+- [x] Configure build settings for full-stack deployment
+- [x] Add API route rewrites for backend server
+- [x] Configure security headers
