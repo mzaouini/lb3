@@ -276,3 +276,13 @@
 - [x] Merge Employee Details with Official Details in Profile (comprehensive page with all info)
 - [x] Move "Change PIN" and "Limits & Usage" from Profile to Cards tab
 - [x] Update favicon to orange 3-dash logo on white background
+
+## Flow Improvements After Yalla Button (User Requested)
+- [x] Add Select Account screen after Review (choose bank account for disbursement)
+- [x] Add OTP Verification screen after Select Account (6-digit code with auto-focus)
+- [x] Update Success screen to show proper confirmation (already complete)
+- [x] Navigate to Home after Success (Done button goes to /app/home)
+- [x] Update Home balance after successful advance (deducts amount from available balance)
+- [ ] Add new transaction to history dynamically (advance + fee)
+- [ ] Ensure balance consistency across Home and Transaction screens
+- [ ] Fix screen colors throughout the flow for consistency

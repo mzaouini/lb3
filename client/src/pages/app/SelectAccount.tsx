@@ -24,7 +24,7 @@ export default function SelectAccount() {
 
   const handleSelectAccount = (accountId: number) => {
     sessionStorage.setItem("selected_account_id", accountId.toString());
-    setLocation("/app/review");
+    setLocation("/app/otp-verification");
   };
 
   return (

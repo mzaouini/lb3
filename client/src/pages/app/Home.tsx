@@ -13,7 +13,14 @@ export default function AppHome() {
   const daysWorked = 14;
   const daysInMonth = 30;
   const earnedSalary = Math.floor((baseSalary * daysWorked) / daysInMonth); // ~4,667 Dhs
-  const availableBalance = Math.floor(earnedSalary * 0.5); // 50% of earned = ~2,333 Dhs
+  
+  // Check if advance was completed and deduct from balance
+  const advanceCompleted = sessionStorage.getItem("advance_completed") === "true";
+  const lastAdvanceAmount = parseInt(sessionStorage.getItem("advance_amount") || "0");
+  const availableBalance = advanceCompleted 
+    ? Math.floor(earnedSalary * 0.5) - lastAdvanceAmount  // Deduct advance from available balance
+    : Math.floor(earnedSalary * 0.5); // 50% of earned = ~2,333 Dhs
+  
   const userName = "Meryem";
 
   return (
