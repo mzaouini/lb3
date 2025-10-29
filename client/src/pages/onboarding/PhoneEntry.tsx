@@ -6,7 +6,7 @@ import { useLocation } from "wouter";
 
 export default function PhoneEntry() {
   const [, setLocation] = useLocation();
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("709968035"); // Prefilled demo data (editable)
 
   const handleContinue = () => {
     if (phoneNumber.length >= 9) {

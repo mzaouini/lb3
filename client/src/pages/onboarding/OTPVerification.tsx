@@ -6,7 +6,7 @@ import { useLocation } from "wouter";
 
 export default function OTPVerification() {
   const [, setLocation] = useLocation();
-  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+  const [otp, setOtp] = useState(["1", "2", "3", "4", "5", "6"]); // Prefilled demo OTP (editable)
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
   const [resendTimer, setResendTimer] = useState(60);
 

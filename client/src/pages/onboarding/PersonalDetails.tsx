@@ -7,12 +7,13 @@ import { useLocation } from "wouter";
 
 export default function PersonalDetails() {
   const [, setLocation] = useLocation();
+  // Prefilled demo data (editable) - if changed, creates new user record
   const [formData, setFormData] = useState({
-    fullName: "",
-    nationalId: "",
-    email: "",
-    company: "",
-    netSalary: "",
+    fullName: "Meryem Guezzour",
+    nationalId: "AB100900",
+    email: "meryem.guezzour@acme.ma",
+    company: "ACME",
+    netSalary: "10000",
   });
 
   const handleChange = (field: string, value: string) => {
@@ -61,7 +62,7 @@ export default function PersonalDetails() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="nationalId" className="text-white/75">National ID / Iqamah</Label>
+            <Label htmlFor="nationalId" className="text-white/75">CIN (National ID)</Label>
             <Input
               id="nationalId"
               type="text"

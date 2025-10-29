@@ -206,3 +206,11 @@
 - [x] Fix vercel.json output directory to dist/public
 - [x] Update routes configuration for proper SPA routing
 - [x] Set framework to "vite" for proper detection
+
+## Prefill Demo Data
+- [x] Prefill phone number with 0709968035 in PhoneEntry screen (editable)
+- [x] Prefill OTP with 123456 in OTPVerification screen (editable)
+- [x] Prefill Personal Details with Meryem's data (Name: Meryem Guezzour, CIN: AB100900, Company: ACME, Salary: 10,000 Dhs)
+- [x] Make all prefilled fields editable for custom demo data
+- [x] Change "National ID / Iqamah" to "CIN (National ID)" in PersonalDetails
+- [x] Ensure edited data creates NEW user records (doesn't update Meryem's data)
