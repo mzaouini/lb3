@@ -11,7 +11,7 @@ export default function Review() {
   const totalAmount = amountInFils + serviceFee;
 
   const handleConfirm = () => {
-    setLocation("/app/success");
+    setLocation("/app/otp-verification");
   };
 
   return (

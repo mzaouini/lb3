@@ -369,3 +369,7 @@
 - [x] Show "Money is being sent to your account" message
 - [x] Add animated money stack icon with pulse/bounce effect
 - [x] Display 2-3 second loading animation before showing success
+
+## Bug Fixes (Animation Not Showing)
+- [x] Fix Review screen to navigate to OTP verification instead of directly to success
+- [x] Ensure transaction flow goes: Review → OTP → Processing Animation → Success
