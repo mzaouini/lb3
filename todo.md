@@ -242,3 +242,15 @@
 - [x] Update Home screen to show latest 2 transactions (advance + fee)
 - [x] Color code: Green for credits (+), Red for debits (-)
 - [x] Add subtitle to each transaction (Meryem - ACME for advances, Transaction Fee for fees)
+
+## Final Polishing (User Requested)
+- [x] Remove "Made with Manus" branding from ManusDialog component
+- [x] Update login dialog text to remove Manus references ("Please login to continue" + "Login" button)
+- [x] Copy dummy ID card images to project (front and back)
+- [x] Copy dummy liveness photo to project
+- [x] Update ScanIDFront to show dummy ID front image
+- [x] Update ScanIDBack to show dummy ID back image
+- [x] Update LivenessCheck to show dummy face photo
+- [x] All images cropped and placed in /client/public/demo/ folder
+- [ ] Test complete onboarding flow with dummy images
+- [ ] Push updated code to GitHub for Vercel redeployment

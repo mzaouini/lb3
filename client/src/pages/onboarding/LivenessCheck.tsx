@@ -93,24 +93,26 @@ export default function LivenessCheck() {
                 ></div>
               </div>
             ) : (
-              <div className="w-full h-full bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="w-20 h-20 mx-auto bg-mint rounded-full flex items-center justify-center">
-                    <svg
-                      className="w-12 h-12 text-navy"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={3}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-mint font-semibold text-lg">Verified!</p>
+              <div className="w-full h-full relative">
+                <img 
+                  src="/demo/liveness.png" 
+                  alt="Liveness Check" 
+                  className="w-full h-full object-cover rounded-full"
+                />
+                <div className="absolute top-4 right-4 bg-mint rounded-full p-2">
+                  <svg
+                    className="w-6 h-6 text-navy"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={3}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
                 </div>
               </div>
             )}

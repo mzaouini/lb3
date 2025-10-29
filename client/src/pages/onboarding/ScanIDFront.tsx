@@ -55,24 +55,26 @@ export default function ScanIDFront() {
                 </p>
               </div>
             ) : (
-              <div className="w-full h-full bg-gradient-to-br from-mint/20 to-teal/20 flex items-center justify-center">
-                <div className="text-center space-y-2">
-                  <div className="w-16 h-16 mx-auto bg-mint rounded-full flex items-center justify-center">
-                    <svg
-                      className="w-10 h-10 text-navy"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={3}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-mint font-semibold">ID Front Captured!</p>
+              <div className="w-full h-full relative">
+                <img 
+                  src="/demo/id-front.png" 
+                  alt="ID Front" 
+                  className="w-full h-full object-cover rounded-2xl"
+                />
+                <div className="absolute top-2 right-2 bg-mint rounded-full p-2">
+                  <svg
+                    className="w-6 h-6 text-navy"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={3}
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
                 </div>
               </div>
             )}
