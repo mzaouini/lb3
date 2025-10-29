@@ -16,9 +16,9 @@ export default function TransactionDetails() {
     date: "October 29, 2025",
     time: "12:48 PM",
     recipient: "Meryem Guezzour",
-    bankName: "LibertyPay Nasp account",
-    accountNumber: "XXXX XXXX XXXX 0401",
-    iban: "MA64011519000001205000000141",
+    bankName: "LibertyPay Naps Account",
+    accountNumber: "XXXX XXXX XXXX 1983",
+    iban: "MA64 0115 1900 0001 2050 0000 0141",
     reference: "REF-LP-2024-10-29-001",
     timeline: [
       { status: "Requested", time: "12:45 PM", completed: true },
@@ -84,19 +84,19 @@ export default function TransactionDetails() {
           <h3 className="font-semibold text-lg">Bank Details</h3>
           <div className="space-y-3">
             <div>
-              <p className="text-sm opacity-75">Recipient</p>
+              <p className="text-sm opacity-90">Recipient</p>
               <p className="font-semibold">{transaction.recipient}</p>
             </div>
             <div>
-              <p className="text-sm opacity-75">Bank Name</p>
+              <p className="text-sm opacity-90">Bank Name</p>
               <p className="font-semibold">{transaction.bankName}</p>
             </div>
             <div>
-              <p className="text-sm opacity-75">Account Number</p>
+              <p className="text-sm opacity-90">Account Number</p>
               <p className="font-semibold font-mono">{transaction.accountNumber}</p>
             </div>
             <div>
-              <p className="text-sm opacity-75">IBAN</p>
+              <p className="text-sm opacity-90">IBAN</p>
               <p className="font-semibold font-mono text-sm">{transaction.iban}</p>
             </div>
           </div>
@@ -107,15 +107,15 @@ export default function TransactionDetails() {
           <h3 className="font-semibold text-lg">Transaction Information</h3>
           <div className="space-y-3">
             <div>
-              <p className="text-sm opacity-75">Reference Number</p>
+              <p className="text-sm opacity-90">Reference Number</p>
               <p className="font-semibold font-mono text-sm">{transaction.reference}</p>
             </div>
             <div>
-              <p className="text-sm opacity-75">Date</p>
+              <p className="text-sm opacity-90">Date</p>
               <p className="font-semibold">{transaction.date}</p>
             </div>
             <div>
-              <p className="text-sm opacity-75">Time</p>
+              <p className="text-sm opacity-90">Time</p>
               <p className="font-semibold">{transaction.time}</p>
             </div>
           </div>

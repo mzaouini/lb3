@@ -161,10 +161,10 @@ export default function Transactions() {
         <Card className="p-6 text-center">
           <p className="text-sm text-gray-600 mb-2">Total Earned Wage Access</p>
           <p className="text-4xl font-bold text-green-600">
-            {formatCurrency(transactions.filter(tx => tx.type === 'credit').reduce((sum, tx) => sum + tx.amount, 0))}
+            {formatCurrency(transactions.filter(tx => tx.type === 'credit' && tx.month === 'October').reduce((sum, tx) => sum + tx.amount, 0))}
           </p>
           <p className="text-xs text-red-500 mt-2">
-            service fees: {formatCurrency(Math.abs(transactions.filter(tx => tx.type === 'debit').reduce((sum, tx) => sum + tx.amount, 0)))}
+            service fees: {formatCurrency(Math.abs(transactions.filter(tx => tx.type === 'debit' && tx.month === 'October').reduce((sum, tx) => sum + tx.amount, 0)))}
           </p>
         </Card>
 

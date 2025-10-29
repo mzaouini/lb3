@@ -316,3 +316,8 @@
 - [x] Show only current month (October 2025) transactions
 - [x] Remove September 2025 section
 - [x] Update total to reflect only October: 3,500 Dhs
+
+## Transaction UI Fixes
+- [x] Fix Total EWA showing 6,700 Dhs - now correctly shows 3,500 Dhs (October only)
+- [x] Update bank account details (LibertyPay Naps Account, XXXX 1983, formatted IBAN)
+- [x] Improve contrast/readability with lighter text (opacity-90 instead of opacity-75)
