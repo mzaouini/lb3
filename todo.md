@@ -298,3 +298,10 @@
 - [x] Add city field to Profile page (Casablanca)
 - [x] Add postal code field to Profile page (20250)
 - [x] Ensure fields are properly styled and consistent with existing design
+
+## Transaction Tab Restructure
+- [x] Show "Total Earned Wage Access" in green (sum of all advances)
+- [x] Show service fees in red, lowercase, smaller font below each advance
+- [x] Calculate October total as 3,500 Dhs (2,000 + 1,000 + 500)
+- [x] Group transactions by month with monthly summary totals
+- [x] Ensure layout reflects EWA (Earned Wage Access) concept clearly

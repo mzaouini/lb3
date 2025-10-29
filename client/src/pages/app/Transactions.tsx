@@ -157,10 +157,15 @@ export default function Transactions() {
           </div>
         </Card>
 
-        {/* Total */}
+        {/* Total Earned Wage Access */}
         <Card className="p-6 text-center">
-          <p className="text-sm text-gray-600 mb-2">Total Transaction</p>
-          <p className="text-4xl font-bold text-teal">{formatCurrency(transactions.reduce((sum, tx) => sum + tx.amount, 0))}</p>
+          <p className="text-sm text-gray-600 mb-2">Total Earned Wage Access</p>
+          <p className="text-4xl font-bold text-green-600">
+            {formatCurrency(transactions.filter(tx => tx.type === 'credit').reduce((sum, tx) => sum + tx.amount, 0))}
+          </p>
+          <p className="text-xs text-red-500 mt-2">
+            service fees: {formatCurrency(Math.abs(transactions.filter(tx => tx.type === 'debit').reduce((sum, tx) => sum + tx.amount, 0)))}
+          </p>
         </Card>
 
         {/* Tabs */}
@@ -176,76 +181,84 @@ export default function Transactions() {
           <div className="space-y-6">
             {/* October Transactions */}
             <div className="space-y-4">
-              <p className="text-teal font-semibold text-lg">October 2025</p>
-              {transactions.filter(tx => tx.month === 'October').map((tx) => (
-              <Card 
-                key={tx.id} 
-                className="p-4 cursor-pointer hover:shadow-md transition-shadow"
-                onClick={() => setLocation("/app/transaction-details")}
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                      tx.status === 'completed' ? 'bg-green-100' : 'bg-orange-100'
-                    }`}>
-                      <span className={tx.status === 'completed' ? 'text-green-600' : 'text-orange-600'}>
-                        {tx.status === 'completed' ? '✓' : '⚠️'}
-                      </span>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-navy">{tx.title}</p>
-                      <p className="text-xs text-gray-600">{tx.subtitle}</p>
-                      <p className="text-xs text-gray-500">{tx.date}</p>
-                    </div>
+              <div className="flex justify-between items-center">
+                <p className="text-teal font-semibold text-lg">October 2025</p>
+                <p className="text-sm font-semibold text-green-600">
+                  {formatCurrency(transactions.filter(tx => tx.month === 'October' && tx.type === 'credit').reduce((sum, tx) => sum + tx.amount, 0))}
+                </p>
+              </div>
+              {transactions.filter(tx => tx.month === 'October' && tx.type === 'credit').map((tx) => {
+                const fee = transactions.find(f => f.id === tx.id + 1 && f.type === 'debit');
+                return (
+                  <div key={tx.id}>
+                    <Card 
+                      className="p-4 cursor-pointer hover:shadow-md transition-shadow"
+                      onClick={() => setLocation("/app/transaction-details")}
+                    >
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 rounded-full flex items-center justify-center bg-green-100">
+                            <span className="text-green-600">✓</span>
+                          </div>
+                          <div>
+                            <p className="font-semibold text-navy">{tx.title}</p>
+                            <p className="text-xs text-gray-600">{tx.subtitle}</p>
+                            <p className="text-xs text-gray-500">{tx.date}</p>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <p className="font-bold text-green-600">+{formatCurrency(tx.amount)}</p>
+                          <p className="text-xs text-gray-500">Instant</p>
+                        </div>
+                      </div>
+                    </Card>
+                    {fee && (
+                      <p className="text-xs text-red-500 ml-16 mt-1">service fee: -{formatCurrency(Math.abs(fee.amount))}</p>
+                    )}
                   </div>
-                  <div className="text-right">
-                    <p className={`font-bold ${
-                      tx.type === 'credit' ? 'text-green-500' : 'text-red-500'
-                    }`}>{tx.type === 'credit' ? '+' : ''}{formatCurrency(Math.abs(tx.amount))}</p>
-                    <p className="text-xs opacity-75">
-                      {tx.status === 'completed' ? 'Instant' : 'In Progress'}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            ))}
+                );
+              })}
             </div>
             
             {/* September Transactions */}
             <div className="space-y-4">
-              <p className="text-teal font-semibold text-lg">September 2025</p>
-              {transactions.filter(tx => tx.month === 'September').map((tx) => (
-              <Card 
-                key={tx.id} 
-                className="p-4 cursor-pointer hover:shadow-md transition-shadow"
-                onClick={() => setLocation("/app/transaction-details")}
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center space-x-3">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
-                      tx.status === 'completed' ? 'bg-green-100' : 'bg-orange-100'
-                    }`}>
-                      <span className={tx.status === 'completed' ? 'text-green-600' : 'text-orange-600'}>
-                        {tx.status === 'completed' ? '✓' : '⚠️'}
-                      </span>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-navy">{tx.title}</p>
-                      <p className="text-xs text-gray-600">{tx.subtitle}</p>
-                      <p className="text-xs text-gray-500">{tx.date}</p>
-                    </div>
+              <div className="flex justify-between items-center">
+                <p className="text-teal font-semibold text-lg">September 2025</p>
+                <p className="text-sm font-semibold text-green-600">
+                  {formatCurrency(transactions.filter(tx => tx.month === 'September' && tx.type === 'credit').reduce((sum, tx) => sum + tx.amount, 0))}
+                </p>
+              </div>
+              {transactions.filter(tx => tx.month === 'September' && tx.type === 'credit').map((tx) => {
+                const fee = transactions.find(f => f.id === tx.id + 1 && f.type === 'debit');
+                return (
+                  <div key={tx.id}>
+                    <Card 
+                      className="p-4 cursor-pointer hover:shadow-md transition-shadow"
+                      onClick={() => setLocation("/app/transaction-details")}
+                    >
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 rounded-full flex items-center justify-center bg-green-100">
+                            <span className="text-green-600">✓</span>
+                          </div>
+                          <div>
+                            <p className="font-semibold text-navy">{tx.title}</p>
+                            <p className="text-xs text-gray-600">{tx.subtitle}</p>
+                            <p className="text-xs text-gray-500">{tx.date}</p>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <p className="font-bold text-green-600">+{formatCurrency(tx.amount)}</p>
+                          <p className="text-xs text-gray-500">Instant</p>
+                        </div>
+                      </div>
+                    </Card>
+                    {fee && (
+                      <p className="text-xs text-red-500 ml-16 mt-1">service fee: -{formatCurrency(Math.abs(fee.amount))}</p>
+                    )}
                   </div>
-                  <div className="text-right">
-                    <p className={`font-bold ${
-                      tx.type === 'credit' ? 'text-green-600' : 'text-red-600'
-                    }`}>{tx.type === 'credit' ? '+' : ''}{formatCurrency(Math.abs(tx.amount))}</p>
-                    <p className="text-xs text-gray-500">
-                      {tx.status === 'completed' ? 'Instant' : 'In Progress'}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            ))}
+                );
+              })}
             </div>
           </div>
         ) : (
