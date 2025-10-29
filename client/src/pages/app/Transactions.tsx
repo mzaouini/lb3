@@ -1,17 +1,26 @@
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ChevronLeft, CreditCard, History, Home, User } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { formatCurrency } from "@shared/currency";
+import { transactionStore } from "@/_core/stores/transactionStore";
 
 export default function Transactions() {
   const [, setLocation] = useLocation();
   const [startDate, setStartDate] = useState("01 Oct, 2025");
   const [endDate, setEndDate] = useState("29 Oct, 2025");
+  
+  // Get dynamic transactions from store
+  const [transactions, setTransactions] = useState(transactionStore.getTransactions());
+  
+  // Update when returning from advance flow
+  useEffect(() => {
+    setTransactions(transactionStore.getTransactions());
+  }, []);
 
-  // Expanded transaction history - each advance shows as 2 transactions (advance + fee)
-  const transactions = [
+  // Static default transactions (removed, now using store)
+  const _unusedTransactions = [
     // October 29 - 2000 Dhs advance
     {
       id: 1,

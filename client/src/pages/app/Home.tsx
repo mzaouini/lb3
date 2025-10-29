@@ -4,22 +4,27 @@ import { APP_TITLE } from "@/const";
 import { formatCurrency } from "@shared/currency";
 import { ArrowRight, CreditCard, History, User, Bell } from "lucide-react";
 import { useLocation } from "wouter";
+import { transactionStore } from "@/_core/stores/transactionStore";
+import { useState, useEffect } from "react";
 
 export default function AppHome() {
   const [, setLocation] = useLocation();
   
-  // Mock data - will be replaced with real data from tRPC
-  const baseSalary = 1000000; // 10,000 Dhs in fils
+  // Get dynamic balance and transactions from store
+  const [availableBalance, setAvailableBalance] = useState(transactionStore.getBalance());
+  const [recentTransactions, setRecentTransactions] = useState(transactionStore.getTransactions().slice(0, 2));
+  
+  // Update when returning from advance flow
+  useEffect(() => {
+    setAvailableBalance(transactionStore.getBalance());
+    setRecentTransactions(transactionStore.getTransactions().slice(0, 2));
+  }, []);
+  
+  // Mock earned salary data
+  const baseSalary = 1000000; // 10,000 Dhs in centimes
   const daysWorked = 14;
   const daysInMonth = 30;
   const earnedSalary = Math.floor((baseSalary * daysWorked) / daysInMonth); // ~4,667 Dhs
-  
-  // Check if advance was completed and deduct from balance
-  const advanceCompleted = sessionStorage.getItem("advance_completed") === "true";
-  const lastAdvanceAmount = parseInt(sessionStorage.getItem("advance_amount") || "0");
-  const availableBalance = advanceCompleted 
-    ? Math.floor(earnedSalary * 0.5) - lastAdvanceAmount  // Deduct advance from available balance
-    : Math.floor(earnedSalary * 0.5); // 50% of earned = ~2,333 Dhs
   
   const userName = "Meryem";
 
@@ -108,50 +113,32 @@ export default function AppHome() {
           </button>
         </div>
 
-        {/* Recent transactions - showing latest advance + fee */}
-        <Card className="p-4 hover:shadow-md transition-shadow cursor-pointer" onClick={() => setLocation("/app/transactions")}>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                <ArrowRight className="w-6 h-6 text-green-600 rotate-[-45deg]" />
+        {/* Recent transactions - dynamic from store */}
+        {recentTransactions.map((tx) => (
+          <Card key={tx.id} className="p-4 hover:shadow-md transition-shadow cursor-pointer" onClick={() => setLocation("/app/transactions")}>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-4">
+                <div className={`w-12 h-12 ${tx.type === 'credit' ? 'bg-green-100' : 'bg-red-100'} rounded-full flex items-center justify-center`}>
+                  <ArrowRight className={`w-6 h-6 ${tx.type === 'credit' ? 'text-green-600 rotate-[-45deg]' : 'text-red-600 rotate-[45deg]'}`} />
+                </div>
+                <div>
+                  <p className="font-semibold text-navy">{tx.title}</p>
+                  <p className="text-xs text-gray-500">{tx.subtitle}</p>
+                  <p className="text-xs text-gray-400">{tx.date}</p>
+                </div>
               </div>
-              <div>
-                <p className="font-semibold text-navy">Salary Advance</p>
-                <p className="text-xs text-gray-500">Meryem - ACME</p>
-                <p className="text-xs text-gray-400">29 Oct 2025 | 12:48 PM</p>
-              </div>
-            </div>
-            <div className="text-right">
-              <p className="font-bold text-green-600">+2,000 Dhs</p>
-              <div className="flex items-center space-x-1">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <p className="text-xs text-gray-500">Instant</p>
-              </div>
-            </div>
-          </div>
-        </Card>
-
-        <Card className="p-4 hover:shadow-md transition-shadow cursor-pointer" onClick={() => setLocation("/app/transactions")}>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-                <ArrowRight className="w-6 h-6 text-red-600 rotate-[45deg]" />
-              </div>
-              <div>
-                <p className="font-semibold text-navy">Service Fee</p>
-                <p className="text-xs text-gray-500">Transaction Fee</p>
-                <p className="text-xs text-gray-400">29 Oct 2025 | 12:48 PM</p>
+              <div className="text-right">
+                <p className={`font-bold ${tx.type === 'credit' ? 'text-green-600' : 'text-red-600'}`}>
+                  {tx.type === 'credit' ? '+' : ''}{formatCurrency(tx.amount)}
+                </p>
+                <div className="flex items-center space-x-1">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <p className="text-xs text-gray-500">Instant</p>
+                </div>
               </div>
             </div>
-            <div className="text-right">
-              <p className="font-bold text-red-600">-60 Dhs</p>
-              <div className="flex items-center space-x-1">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <p className="text-xs text-gray-500">Instant</p>
-              </div>
-            </div>
-          </div>
-        </Card>
+          </Card>
+        ))}
       </div>
 
       {/* Bottom Navigation */}

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { useLocation } from "wouter";
+import { transactionStore } from "@/_core/stores/transactionStore";
 
 export default function OTPVerification() {
   const [, setLocation] = useLocation();
@@ -35,6 +36,14 @@ export default function OTPVerification() {
   const handleVerify = () => {
     const otpCode = otp.join("");
     if (otpCode.length === 6) {
+      // Get requested amount from session
+      const amountStr = sessionStorage.getItem("advance_amount");
+      if (amountStr) {
+        const amount = parseInt(amountStr);
+        // Add transaction to store (updates balance and transaction list)
+        transactionStore.addTransaction(amount);
+      }
+      
       // Store that advance was completed
       sessionStorage.setItem("advance_completed", "true");
       setLocation("/app/success");

@@ -321,3 +321,13 @@
 - [x] Fix Total EWA showing 6,700 Dhs - now correctly shows 3,500 Dhs (October only)
 - [x] Update bank account details (LibertyPay Naps Account, XXXX 1983, formatted IBAN)
 - [x] Improve contrast/readability with lighter text (opacity-90 instead of opacity-75)
+
+## Dynamic Transaction Creation (Session-Based)
+- [x] Validate request amount against available balance (cannot exceed)
+- [x] Create new transaction after OTP success (advance + fee)
+- [x] Update Home screen with new transaction in recent activity
+- [x] Update Home balance to reflect new advance
+- [x] Update Transactions tab with new transaction
+- [x] Update Total EWA in Transactions tab
+- [x] Use sessionStorage to persist changes during app session only
+- [x] Reset balance and transactions on login (fresh session)

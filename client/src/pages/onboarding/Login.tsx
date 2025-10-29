@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { useLocation } from "wouter";
+import { transactionStore } from "@/_core/stores/transactionStore";
 
 export default function Login() {
   const [, setLocation] = useLocation();
@@ -13,6 +14,9 @@ export default function Login() {
     // Test credentials: +212 612345678, PIN: 1234
     if (phone === "+212612345678" || phone === "212612345678" || phone === "612345678") {
       if (pin === "1234") {
+        // Reset transaction store on login (fresh session)
+        transactionStore.reset();
+        
         // Store login state
         sessionStorage.setItem("isLoggedIn", "true");
         sessionStorage.setItem("userName", "Meryem Guezzour");

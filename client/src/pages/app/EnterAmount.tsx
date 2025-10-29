@@ -3,11 +3,12 @@ import { ChevronLeft } from "lucide-react";
 import { useState } from "react";
 import { useLocation } from "wouter";
 import { formatCurrency, parseCurrencyToFils } from "@shared/currency";
+import { transactionStore } from "@/_core/stores/transactionStore";
 
 export default function EnterAmount() {
   const [, setLocation] = useLocation();
   const [amount, setAmount] = useState("");
-  const currentBalance = 233333; // 2,333.33 Dhs in fils (50% of 14 days worked from 10,000 Dhs salary)
+  const currentBalance = transactionStore.getBalance(); // Get current session balance
 
   const handleNumberClick = (num: string) => {
     if (num === "." && amount.includes(".")) return;
@@ -20,8 +21,20 @@ export default function EnterAmount() {
   };
 
   const handleContinue = () => {
-    const amountInFils = parseCurrencyToFils(amount);
-    sessionStorage.setItem("advance_amount", amountInFils.toString());
+    const amountInCentimes = parseCurrencyToFils(amount);
+    
+    // Validate amount against current balance
+    if (amountInCentimes > currentBalance) {
+      alert(`Amount exceeds available balance of ${formatCurrency(currentBalance)}`);
+      return;
+    }
+    
+    if (amountInCentimes <= 0) {
+      alert("Please enter a valid amount");
+      return;
+    }
+    
+    sessionStorage.setItem("advance_amount", amountInCentimes.toString());
     setLocation("/app/select-account");
   };
 
