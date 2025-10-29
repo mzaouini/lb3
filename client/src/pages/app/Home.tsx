@@ -9,8 +9,8 @@ export default function AppHome() {
   const [, setLocation] = useLocation();
   
   // Mock data - will be replaced with real data from tRPC
-  const availableBalance = 1685000; // 16,850 Dhs in fils
-  const userName = "demo";
+  const availableBalance = 400000; // 4,000 Dhs in fils (50% of 8,000 Dhs salary)
+  const userName = "Meryem";
 
   return (
     <div className="mobile-container min-h-screen bg-gray-50">
@@ -81,15 +81,15 @@ export default function AppHome() {
                 <History className="w-6 h-6 text-gold" />
               </div>
               <div>
-                <p className="font-semibold text-navy">DOrg FName53 DOrg LName53</p>
+                <p className="font-semibold text-navy">Meryem - ACME</p>
                 <p className="text-sm text-gray-500">29 Oct 2025 | 12:48 PM</p>
               </div>
             </div>
             <div className="text-right">
-              <p className="font-bold text-orange-600">Dhs 104</p>
+              <p className="font-bold text-green-600">2,060 Dhs</p>
               <div className="flex items-center space-x-1">
-                <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
-                <p className="text-xs text-gray-500">In Progress</p>
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <p className="text-xs text-gray-500">Instant</p>
               </div>
             </div>
           </div>

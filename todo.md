@@ -110,3 +110,11 @@
 ## Bug Fixes (New)
 - [x] Fix white screen on /app/home - content not displaying, only bottom navigation visible
 - [x] Remove min-h-screen from mobile-container CSS class to fix layout conflicts
+
+## Home Screen Updates
+- [x] Change username from "demo" to "Meryem"
+- [x] Update transaction name from "DOrg FName53 DOrg LName53" to "Meryem - ACME"
+- [x] Change transaction status from "In Progress" to "Instant"
+- [x] Update transaction to show completed/instant status instead of pending
+- [x] Update available balance to 4,000 Dhs (50% of 8,000 Dhs salary)
+- [x] Update transaction amount to 2,060 Dhs (2,000 + 60 fee)
