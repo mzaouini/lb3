@@ -61,7 +61,7 @@ export default function AppHome() {
       </div>
 
       {/* Recent Transactions */}
-      <div className="px-6 space-y-4">
+      <div className="px-6 space-y-4 pb-24">
         <div className="flex justify-between items-center">
           <h2 className="text-xl font-bold text-navy">Recent Transactions</h2>
           <button

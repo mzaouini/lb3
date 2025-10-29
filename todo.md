@@ -106,3 +106,7 @@
 - [x] Update onboarding flow routing (Personal Details → ID Scan → Liveness → Complete)
 - [x] Add transaction reference number generation
 - [x] Add fee breakdown display in Success screen
+
+## Bug Fixes (New)
+- [x] Fix white screen on /app/home - content not displaying, only bottom navigation visible
+- [x] Remove min-h-screen from mobile-container CSS class to fix layout conflicts

@@ -189,7 +189,7 @@
   
   /* Mobile-first responsive container for Liberty Pay */
   .mobile-container {
-    @apply max-w-md mx-auto min-h-screen;
+    @apply max-w-md mx-auto;
   }
   
   /* Liberty Pay gradient background */
