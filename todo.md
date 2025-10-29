@@ -305,3 +305,9 @@
 - [x] Calculate October total as 3,500 Dhs (2,000 + 1,000 + 500)
 - [x] Group transactions by month with monthly summary totals
 - [x] Ensure layout reflects EWA (Earned Wage Access) concept clearly
+
+## Transaction Details Fix
+- [x] Fix Amount Breakdown to show fee as deduction (not addition)
+- [x] Show "Total Received" as Requested Amount minus Service Fee (2,000 - 60 = 1,940 Dhs)
+- [x] Display service fee in red with minus sign (-60 Dhs)
+- [x] Change "Total Amount" to "Amount Received" for clarity

@@ -11,7 +11,7 @@ export default function TransactionDetails() {
     id: "TXN-2024-001",
     amount: 2000,
     fee: 60,
-    total: 2060,
+    total: 1940, // Amount received after fee deduction
     status: "Completed",
     date: "October 29, 2025",
     time: "12:48 PM",
@@ -51,7 +51,7 @@ export default function TransactionDetails() {
             </div>
           </div>
           <div>
-            <p className="text-sm opacity-75">Total Amount</p>
+            <p className="text-sm opacity-75">Amount Received</p>
             <h2 className="text-4xl font-bold text-mint">{transaction.total} Dhs</h2>
           </div>
           <div className="inline-block px-4 py-2 bg-green-500/20 rounded-full">
@@ -69,11 +69,11 @@ export default function TransactionDetails() {
             </div>
             <div className="flex justify-between">
               <span className="opacity-75">Service Fee</span>
-              <span className="font-semibold">{transaction.fee} Dhs</span>
+              <span className="font-semibold text-red-400">-{transaction.fee} Dhs</span>
             </div>
             <div className="h-px bg-white/20"></div>
             <div className="flex justify-between text-lg">
-              <span className="font-semibold">Total</span>
+              <span className="font-semibold">Total Received</span>
               <span className="font-bold text-mint">{transaction.total} Dhs</span>
             </div>
           </div>
