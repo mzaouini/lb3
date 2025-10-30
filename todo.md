@@ -394,3 +394,12 @@
 - [x] EnterAmount screen - sync with Liberty Pay colors (already using navy + mint)
 - [x] SelectAccount screen - sync with Liberty Pay colors (already using navy + mint)
 - [x] Ensure all cards use consistent gradient styles matching Home/Cards screens
+
+## Success Screen Fee Breakdown Update
+- [x] Update Success screen to show detailed fee breakdown
+- [x] Display Service Fee HT: 50 Dhs
+- [x] Display VAT (20%): 10 Dhs
+- [x] Display Service Fee TTC: 60 Dhs
+- [x] Update download receipt to include fee breakdown
+- [x] Update share receipt to include fee breakdown
+- [x] Show only advance amount (500 Dhs) as "will be transferred"

@@ -6,7 +6,9 @@ import { formatCurrency } from "@shared/currency";
 export default function Success() {
   const [, setLocation] = useLocation();
   const amountInFils = parseInt(sessionStorage.getItem("advance_amount") || "11000");
-  const serviceFee = 6000; // 60 Dhs fixed fee
+  const serviceFeeHT = 5000; // 50 Dhs service fee (before tax)
+  const vat = 1000; // 10 Dhs VAT (20% of 50 Dhs)
+  const serviceFee = 6000; // 60 Dhs total service fee (HT + VAT)
   const totalAmount = amountInFils + serviceFee;
   const transactionRef = `SA-${new Date().getFullYear()}${String(new Date().getMonth() + 1).padStart(2, '0')}${String(new Date().getDate()).padStart(2, '0')}-${Math.floor(Math.random() * 10000).toString().padStart(4, '0')}`;
 
@@ -32,7 +34,9 @@ TRANSACTION DETAILS
 ───────────────────────────────
 
 Salary Advance:     ${formatCurrency(amountInFils)}
-Service Fee:        ${formatCurrency(serviceFee)}
+Service Fee HT:     ${formatCurrency(serviceFeeHT)}
+VAT (20%):          ${formatCurrency(vat)}
+Service Fee TTC:    ${formatCurrency(serviceFee)}
                     ─────────────
 Total Amount:       ${formatCurrency(totalAmount)}
 
@@ -65,7 +69,7 @@ For support: support@libertypay.ma
   };
 
   const handleShareReceipt = () => {
-    const shareText = `LibertyPay Transaction\n\nAmount: ${formatCurrency(amountInFils)}\nFee: ${formatCurrency(serviceFee)}\nTotal: ${formatCurrency(totalAmount)}\nRef: ${transactionRef}\n\nStatus: Approved ✓`;
+    const shareText = `LibertyPay Transaction\n\nAmount: ${formatCurrency(amountInFils)}\nService Fee HT: ${formatCurrency(serviceFeeHT)}\nVAT (20%): ${formatCurrency(vat)}\nService Fee TTC: ${formatCurrency(serviceFee)}\nTotal: ${formatCurrency(totalAmount)}\nRef: ${transactionRef}\n\nStatus: Approved ✓`;
     
     if (navigator.share) {
       navigator.share({
@@ -110,7 +114,15 @@ For support: support@libertypay.ma
               <span className="font-semibold">{formatCurrency(amountInFils)}</span>
             </div>
             <div className="flex justify-between">
-              <span className="opacity-75">Service Fee</span>
+              <span className="opacity-75">Service Fee HT</span>
+              <span className="font-semibold">{formatCurrency(serviceFeeHT)}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="opacity-75">VAT (20%)</span>
+              <span className="font-semibold">{formatCurrency(vat)}</span>
+            </div>
+            <div className="flex justify-between">
+              <span className="opacity-75">Service Fee TTC</span>
               <span className="font-semibold">{formatCurrency(serviceFee)}</span>
             </div>
             <div className="border-t border-white/20 pt-2 flex justify-between font-bold">
