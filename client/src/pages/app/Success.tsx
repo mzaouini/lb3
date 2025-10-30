@@ -30,15 +30,19 @@ Date: ${new Date().toLocaleDateString('en-MA', {
 Time: ${new Date().toLocaleTimeString('en-MA')}
 
 ───────────────────────────────
-TRANSACTION DETAILS
+SALARY ADVANCE
 ───────────────────────────────
 
-Salary Advance:     ${formatCurrency(amountInFils)}
+Amount Transferred: ${formatCurrency(amountInFils)}
+
+───────────────────────────────
+SERVICE FEE RECEIPT
+───────────────────────────────
+
 Service Fee HT:     ${formatCurrency(serviceFeeHT)}
 VAT (20%):          ${formatCurrency(vat)}
-Service Fee TTC:    ${formatCurrency(serviceFee)}
                     ─────────────
-Total Amount:       ${formatCurrency(totalAmount)}
+Total TTC:          ${formatCurrency(serviceFee)}
 
 ───────────────────────────────
 STATUS
@@ -69,7 +73,7 @@ For support: support@libertypay.ma
   };
 
   const handleShareReceipt = () => {
-    const shareText = `LibertyPay Transaction\n\nAmount: ${formatCurrency(amountInFils)}\nService Fee HT: ${formatCurrency(serviceFeeHT)}\nVAT (20%): ${formatCurrency(vat)}\nService Fee TTC: ${formatCurrency(serviceFee)}\nTotal: ${formatCurrency(totalAmount)}\nRef: ${transactionRef}\n\nStatus: Approved ✓`;
+    const shareText = `LibertyPay Transaction\n\nSalary Advance: ${formatCurrency(amountInFils)}\n\nService Fee Receipt:\nFee HT: ${formatCurrency(serviceFeeHT)}\nVAT (20%): ${formatCurrency(vat)}\nTotal TTC: ${formatCurrency(serviceFee)}\n\nRef: ${transactionRef}\nStatus: Approved ✓`;
     
     if (navigator.share) {
       navigator.share({
@@ -107,12 +111,9 @@ For support: support@libertypay.ma
             <p className="text-sm font-mono font-semibold">{transactionRef}</p>
           </div>
           
-          {/* Fee Breakdown */}
+          {/* Service Fee Receipt */}
           <div className="bg-white/5 rounded-lg p-4 text-sm space-y-2">
-            <div className="flex justify-between">
-              <span className="opacity-75">Advance Amount</span>
-              <span className="font-semibold">{formatCurrency(amountInFils)}</span>
-            </div>
+            <p className="text-xs opacity-75 mb-2">Service Fee Receipt</p>
             <div className="flex justify-between">
               <span className="opacity-75">Service Fee HT</span>
               <span className="font-semibold">{formatCurrency(serviceFeeHT)}</span>
@@ -121,13 +122,9 @@ For support: support@libertypay.ma
               <span className="opacity-75">VAT (20%)</span>
               <span className="font-semibold">{formatCurrency(vat)}</span>
             </div>
-            <div className="flex justify-between">
-              <span className="opacity-75">Service Fee TTC</span>
-              <span className="font-semibold">{formatCurrency(serviceFee)}</span>
-            </div>
             <div className="border-t border-white/20 pt-2 flex justify-between font-bold">
-              <span>Total</span>
-              <span className="text-mint">{formatCurrency(totalAmount)}</span>
+              <span>Total TTC</span>
+              <span className="text-mint">{formatCurrency(serviceFee)}</span>
             </div>
           </div>
         </div>

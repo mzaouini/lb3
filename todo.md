@@ -399,7 +399,9 @@
 - [x] Update Success screen to show detailed fee breakdown
 - [x] Display Service Fee HT: 50 Dhs
 - [x] Display VAT (20%): 10 Dhs
-- [x] Display Service Fee TTC: 60 Dhs
-- [x] Update download receipt to include fee breakdown
-- [x] Update share receipt to include fee breakdown
+- [x] Display Service Fee TTC: 60 Dhs (total for fee receipt)
+- [x] Update download receipt to separate advance and fee sections
+- [x] Update share receipt to separate advance and fee
 - [x] Show only advance amount (500 Dhs) as "will be transferred"
+- [x] Clarify that fee is charged separately, not added to transfer amount
+- [x] Fee receipt shows as separate service charge (HT + VAT = TTC)
